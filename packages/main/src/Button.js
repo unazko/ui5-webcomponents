@@ -112,19 +112,6 @@ const metadata = {
 		},
 
 		/**
-		 * Defines the tooltip of the button.
-		 * <br>
-		 * <b>Note:</b> Tooltips should only be set to icon-only buttons.
-		 * @type {string}
-		 * @defaultvalue: ""
-		 * @private
-		 * @since 1.0.0-rc.11
-		 */
-		title: {
-			type: String,
-		},
-
-		/**
 		 * Used to switch the active state (pressed or not) of the component.
 		 * @private
 		 */
@@ -205,6 +192,7 @@ const metadata = {
 		 * 			</ul>
 		 * 		</li>
 		 * 		<li><code>controls</code>: Identifies the element (or elements) whose contents or presence are controlled by the button element. Accepts a string value.</li>
+		 * 		<li><code>tooltip</code>: Defines the tooltip of the button. Tooltips should only be set to icon-only buttons. Accepts a string value.</li>
 		 * </ul>
 		 * @type {object}
 		 * @public
@@ -482,7 +470,7 @@ class Button extends UI5Element {
 	}
 
 	get showIconTooltip() {
-		return this.iconOnly && !this.title;
+		return this.iconOnly && !this.accessibilityAttributes.tooltip;
 	}
 
 	get ariaLabelText() {

@@ -183,11 +183,11 @@
 	<br/>
 	<ui5-title>Buttons with tooltip</ui5-title>
 	<br/>
-	<ui5-button icon="message-information" title="Go home"></ui5-button>
-	<ui5-button icon="accept" title="Accept terms & conditions"></ui5-button>
-	<ui5-button icon="action-settings" title="Go to settings"></ui5-button>
-	<ui5-button icon="alert" title="Fire an alert"></ui5-button>
-	<ui5-button icon="arrow-down" title="Go down"></ui5-button>
+	<ui5-button id="homeButton" design="Emphasized" icon="message-information"></ui5-button>
+	<ui5-button id="acceptButton" icon="accept"></ui5-button>
+	<ui5-button id="settingsButton" icon="action-settings"></ui5-button>
+	<ui5-button id="alertButton" icon="alert"></ui5-button>
+	<ui5-button id="arrowDownButton" icon="arrow-down"></ui5-button>
 
 	<br/>
 	<br/>
@@ -227,6 +227,31 @@
 		var button = document.querySelector("#button1");
 		var disabledButton = document.querySelector("#button-disabled");
 		var clickCount = 0;
+		var homeButton = document.getElementById("homeButton");
+		var acceptButton = document.getElementById("acceptButton");
+		var settingsButton = document.getElementById("settingsButton");
+		var alertButton = document.getElementById("alertButton");
+		var arrowDownButton = document.getElementById("arrowDownButton");
+
+		homeButton.accessibilityAttributes = {
+			tooltip: "Go home",
+		};
+
+		acceptButton.accessibilityAttributes = {
+			tooltip: "Accept terms & conditions",
+		};
+
+		settingsButton.accessibilityAttributes = {
+			tooltip: "Go to settings",
+		};
+
+		alertButton.accessibilityAttributes = {
+			tooltip: "Fire an alert",
+		};
+
+		arrowDownButton.accessibilityAttributes = {
+			tooltip: "Go down",
+		};
 
 		[button, disabledButton].forEach(function (el) {
 			el.addEventListener("click", function(event) {
