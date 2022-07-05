@@ -1,7 +1,8 @@
-commit 6a2f9efad1871be965c528331d03e3501bb25044
-Author: Lukas Harbarth <lukas.harbarth@sap.com>
-Date:   Mon Jul 4 14:57:06 2022 +0200
+commit 766d573c621d57ccf395d4362befab7d1ed2d635
+Author: Stanislav Bodurov <stbodurov@icloud.com>
+Date:   Tue Jul 5 15:23:45 2022 +0300
 
-    docs: fix typo in grouping example (#5454)
+    docs(ui5-option): update disabled documentation (#5464)
     
-    Update MultiComboBox.sample.html
+    According to https://experience.sap.com/fiori-design-web/select/#option-list1, Select options are supposed to be completely hidden when disabled.
+    This is why `disabled` hides options instead of altering their appearance.
