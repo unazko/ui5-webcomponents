@@ -1,8 +1,7 @@
-commit 766d573c621d57ccf395d4362befab7d1ed2d635
-Author: Stanislav Bodurov <stbodurov@icloud.com>
-Date:   Tue Jul 5 15:23:45 2022 +0300
+commit b60ff3ff0bfd48af58838ef1b40d4bbe5f7cab76
+Author: TeodorTaushanov <teodor.taushanov@sap.com>
+Date:   Tue Aug 23 16:56:04 2022 +0300
 
-    docs(ui5-option): update disabled documentation (#5464)
+    feat(ui5-carousel): add new CSS Shadow part (#5700)
     
-    According to https://experience.sap.com/fiori-design-web/select/#option-list1, Select options are supposed to be completely hidden when disabled.
-    This is why `disabled` hides options instead of altering their appearance.
+    * feat(ui5-carousel): add content part

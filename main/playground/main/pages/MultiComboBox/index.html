@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>MultiComboBox test page</title>
 	<script>
 		// delete Document.prototype.adoptedStyleSheets
@@ -22,7 +21,7 @@
 
 	
 
-  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.9eabc816.js'></script>
+  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.57f3ab01.js'></script>
   <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/test/pages/MultiComboBox.html.f06e18eb.css'>
 </head>
 
@@ -140,7 +139,7 @@
 		<span>value state information </span>
 
 		<br>
-		<ui5-multi-combobox allow-custom-values placeholder="Some initial text"
+		<ui5-multi-combobox allow-custom-values placeholder="Some initial text" id="mcb-information"
 			value-state="Information">
 			<ui5-mcb-item selected text="Cosy"></ui5-mcb-item>
 			<ui5-mcb-item text="Compact"></ui5-mcb-item>
@@ -180,7 +179,7 @@
 		<span>readonly </span>
 
 		<br>
-		<ui5-multi-combobox allow-custom-values placeholder="Some initial text" readonly>
+		<ui5-multi-combobox id="mcb-ro" allow-custom-values placeholder="Some initial text" readonly>
 			<ui5-mcb-item selected text="Cosy"></ui5-mcb-item>
 			<ui5-mcb-item text="Compact"></ui5-mcb-item>
 			<ui5-mcb-item selected text="Condensed"></ui5-mcb-item>
