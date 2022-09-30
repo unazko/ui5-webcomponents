@@ -1,7 +1,21 @@
-commit b60ff3ff0bfd48af58838ef1b40d4bbe5f7cab76
-Author: TeodorTaushanov <teodor.taushanov@sap.com>
-Date:   Tue Aug 23 16:56:04 2022 +0300
+commit cfe6b2b3845686437fc53b87ec5b2f991d521dd9
+Author: SAP LX Lab Service Account <tmsatsls+github.com_service-tip-git@sap.com>
+Date:   Fri Sep 30 01:53:38 2022 -0700
 
-    feat(ui5-carousel): add new CSS Shadow part (#5700)
+    Translation Delivery (#5834)
     
-    * feat(ui5-carousel): add content part
+    * chore: translation delivery
+    
+    Change-Id: Ia4a02b89c476fd46065c7c4a2e72b1e0a6bee341
+    
+    * chore: translation delivery
+    
+    Change-Id: Iae8297990fd6083daf989aadc2ee9eb19e06a659
+    
+    * chore: translation delivery
+    
+    Change-Id: I1ae1799a360bad76801d08e94c39dab9bd3cb0ab
+    
+    * chore: translation delivery
+    
+    Change-Id: I17c8510582e58d1e19c7c9c80ad682035ab39a94
