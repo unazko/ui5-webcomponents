@@ -11,8 +11,8 @@
 
 	<script>// delete Document.prototype.adoptedStyleSheets;</script>
 
-  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.0b45a0b1.js'></script>
-  <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/test/pages/List.html.65a3c4b3.css'>
+  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.ee109d99.js'></script>
+  <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/List.4be08d9a.css'>
 </head>
 
 <body class="list1auto">
@@ -76,6 +76,23 @@
 
 	<br/><br/>
 
+	<ui5-list header-text="API: imageContent">
+		<ui5-li> Avatar inside imageContent slot
+			<div slot="imageContent">
+				<ui5-avatar shape="Square" initials="ABC" color-scheme="Accent2"></ui5-avatar>
+			</div>
+		</ui5-li>
+		<ui5-li> Avatar inside imageContent slot
+			<div slot="imageContent">
+				<ui5-avatar >
+					<img src='https://sap.github.io/ui5-webcomponents/main/assets/woman_avatar_5.7316a316.png' alt="Woman image">
+				</ui5-avatar>
+			</div>
+		</ui5-li>
+	</ui5-list>
+
+	<br/><br/>
+
 	<ui5-list header-text="API: ListItem type='Active/Inactive/Detail'" mode="SingleSelect">
 		<ui5-li >Active item - press</ui5-li>
 		<ui5-li >Active item - press</ui5-li>
@@ -97,6 +114,22 @@
 		<ui5-li type="Inactive">Inactive item</ui5-li>
 		<ui5-li type="Inactive">Inactive item</ui5-li>
 	</ui5-list>
+
+	<br/><br/>
+
+	<ui5-list id="navigationListItems" header-text="API: ListItem type='Navigation'">
+		<ui5-li type="Navigation">Navigation item</ui5-li>
+		<ui5-li type="Navigation" icon="navigation-right-arrow">Navigation item</ui5-li>
+	</ui5-list>
+	<br />
+
+	<br/><br/>
+
+	<ui5-list id="navigatedItems" header-text="API: navigated" >
+		<ui5-li type="Navigation" navigated>Navigated item</ui5-li>
+		<ui5-li type="Navigation" navigated>Navigated item</ui5-li>
+	</ui5-list>
+	<br />
 
 	<br/><br/>
 
@@ -161,6 +194,11 @@
 		<ui5-li id="bg">Bulgaria</ui5-li>
 		<ui5-li id="ch">China</ui5-li>
 		<ui5-li type="Detail">Detail item</ui5-li>
+		<ui5-li>Denmark
+			<div slot="deleteButton">
+				<ui5-button>Custom Delete Button</ui5-button>
+			</div>
+		</ui5-li>
 	</ui5-list>
 
 	<br/><br/>
@@ -342,7 +380,7 @@
 			infoLbl.innerHTML = "Items " + info[count];
 		};
 
-		list.addEventListener("ui5-itemDelete", function (event) {
+		list.addEventListener("ui5-item-delete", function (event) {
 			var item = event.detail.item;
 			var newItems = list.items.filter(function (x) {
 				return x.id !== item.id;
@@ -358,37 +396,37 @@
 
 		resetBtn.addEventListener("click", resetList);
 
-		singleSelectListPrevent.addEventListener("ui5-itemClick", function (event) {
+		singleSelectListPrevent.addEventListener("ui5-item-click", function (event) {
 			event.preventDefault();
 			var clickedItem = event.detail.item;
 			lblitemClickPrevent.innerHTML = "[Prevented Event] itemClick :: " + clickedItem.id;
 		});
 
-		singleSelectList.addEventListener("ui5-selectionChange", function (event) {
+		singleSelectList.addEventListener("ui5-selection-change", function (event) {
 			var selectedItems = event.detail.selectedItems;
 
 			alert("Selection changed: " + selectedItems.map(function(item) { return item.id}).join("/"));
 		});
 
-		singleSelectEndList.addEventListener("ui5-itemPress", function (event) {
+		singleSelectEndList.addEventListener("ui5-item-press", function (event) {
 			var pressedItem = event.detail.item;
 			lblItemPress.innerHTML = "Event] itemPress :: " + pressedItem.id;
 		});
-		singleSelectEndList.addEventListener("ui5-itemClick", function (event) {
+		singleSelectEndList.addEventListener("ui5-item-click", function (event) {
 			lblItemClick.innerHTML = "Event] itemClick :: " + event.detail.item.id;
 		});
 
-		singleSelectEndList.addEventListener("ui5-selectionChange", function (event) {
+		singleSelectEndList.addEventListener("ui5-selection-change", function (event) {
 			var selectedItems = event.detail.selectedItems;
 			lblSelectionChange.innerHTML = "|Event] selectionChange :: " + selectedItems.map(function(item) { return item.id}).join("/");
 		});
 
-		multiSelectList.addEventListener("ui5-itemPress", function (event) {
+		multiSelectList.addEventListener("ui5-item-press", function (event) {
 			var pressedItem = event.detail.item;
 			lblItemPress2.innerHTML = "Event] itemPress :: " + pressedItem.id;
 		});
 
-		multiSelectList.addEventListener("ui5-selectionChange", function (event) {
+		multiSelectList.addEventListener("ui5-selection-change", function (event) {
 			var selectedItems = event.detail.selectedItems;
 			lblSelectionChange2.innerHTML = "Event] selectionChange :: " + selectedItems.map(function(item) { return item.id}).join("/");
 		});
