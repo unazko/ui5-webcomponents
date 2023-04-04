@@ -1,93 +1,9 @@
-commit a066eb8f0eb816990afbdeab212f74048cab10d2
-Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
-Date:   Fri Mar 31 14:24:01 2023 +0300
+commit 88582d632dc7c7a76f138eefd1ab5b3ada71b79e
+Author: niyap <38278268+niyap@users.noreply.github.com>
+Date:   Tue Apr 4 14:30:42 2023 +0300
 
-    refactor(framework): add type module to package.json (#6617)
+    fix(ui5-input, ui5-button): align form controls vertically (#6860)
     
-    * refactor(framework): add type module to package.json
+    * fix(ui5-input, ui5-button): align form controls vertically
     
-    * chore: add fiori package
-    
-    * chore: sidenavigation tests
-    
-    * chore: shellbar tests
-    
-    * chore: main tests
-    
-    * chore: main tests
-    
-    * chore: add icons/localization/theming
-    
-    * chore: vite to esm
-    
-    * chore: lint
-    
-    * chore: lint
-    
-    * chore: lint
-    
-    * chore: make all configs common js
-    
-    * chore: enable base test
-    
-    * chore: vite to commonjs
-    
-    * chore: tools to cjs
-    
-    * chore: cjs or js
-    
-    * chore: fix build
-    
-    * chore: add eslintrc to main
-    
-    * chore: update eslint to cjs
-    
-    * chore: add tests for ssr
-    
-    * chore: add eslint ignore
-    
-    * refactor(framework): add type module to package.json
-    
-    * chore: add fiori package
-    
-    * chore: sidenavigation tests
-    
-    * chore: shellbar tests
-    
-    * chore: main tests
-    
-    * chore: main tests
-    
-    * chore: add icons/localization/theming
-    
-    * chore: vite to esm
-    
-    * chore: lint
-    
-    * chore: lint
-    
-    * chore: make all configs common js
-    
-    * chore: enable base test
-    
-    * chore: vite to commonjs
-    
-    * chore: tools to cjs
-    
-    * chore: cjs or js
-    
-    * chore: fix build
-    
-    * chore: add eslintrc to main
-    
-    * chore: update eslint to cjs
-    
-    * chore: add tests for ssr
-    
-    * chore: add eslint ignore
-    
-    * chore: rebase
-    
-    ---------
-    
-    Co-authored-by: Nayden Naydenov <nnaydenow.work@sap.com>
+    * fix(ui5-input, ui5-button): adjust sample
