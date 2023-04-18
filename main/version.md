@@ -1,9 +1,5 @@
-commit 88582d632dc7c7a76f138eefd1ab5b3ada71b79e
-Author: niyap <38278268+niyap@users.noreply.github.com>
-Date:   Tue Apr 4 14:30:42 2023 +0300
+commit 081a74aeb2995d287d9d4d08740baddba7944bc4
+Author: Elena Stoyanova <elena.stoyanova@sap.com>
+Date:   Tue Apr 18 15:02:44 2023 +0300
 
-    fix(ui5-input, ui5-button): align form controls vertically (#6860)
-    
-    * fix(ui5-input, ui5-button): align form controls vertically
-    
-    * fix(ui5-input, ui5-button): adjust sample
+    docs(ui5-page): add samples to Storybook (#6911)

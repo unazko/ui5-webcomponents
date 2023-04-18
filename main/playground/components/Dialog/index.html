@@ -347,6 +347,8 @@
       
     
       
+    
+      
         
       
     
@@ -386,6 +388,8 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
                 
                   
                 
@@ -1041,6 +1045,8 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
                 
                   
                 
@@ -1995,6 +2001,8 @@
                   
                 
                   
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/customizing/theme/" class="navigation-list-link">
@@ -2294,6 +2302,8 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
                 
                   
                 
@@ -3180,6 +3190,8 @@
                   
                 
                   
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/development/custom-ui5-web-components-packages/" class="navigation-list-link">
@@ -3526,6 +3538,8 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
                 
                   
                 
@@ -4555,6 +4569,8 @@
                   
                 
                   
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/changelog/1.10.0.md/" class="navigation-list-link">
@@ -4994,6 +5010,8 @@
             
               
               <ul class="navigation-list-child-list  visible">
+                
+                  
                 
                   
                 
@@ -6516,6 +6534,83 @@
 <span class="nt">&lt;/ui5-dialog&gt;</span>
 	</code></pre></figure></pre>
 </section>
+
+<section>
+	<h3>Dialog with Bar in the Header and in the Footer</h3>
+	<div class="snippet">
+		<ui5-button id="with-bar">Open dialog with ui5-bar</ui5-button>
+
+		<ui5-dialog id="with-bar-dialog">
+			<ui5-bar slot="header" design="Header">
+				<ui5-title level="H5" slot="startContent">Sample Dialog with Bar</ui5-title>
+				<ui5-button
+				  design="Transparent"
+				  id="with-bar-close"
+				  slot="endContent"
+				  icon="decline">
+				</ui5-button>
+			  </ui5-bar>
+			  <div>
+				Adding styles for the parts "header" and "footer" to remove the default Dialog's paddings when ui5-bar is used inside Header and Footer.
+			  </div>
+			<ui5-bar slot="footer" design="Footer">
+				<ui5-button id="with-bar-ok" design="Emphasized" slot="endContent" style="min-width: 4rem;">OK</ui5-button>
+			</ui5-bar>
+		</ui5-dialog>
+	</div>
+
+	<script>
+		var dialogOpener4 = document.getElementById("with-bar");
+		var dialog4 = document.getElementById("with-bar-dialog");
+		var dialogCloser41 = document.getElementById("with-bar-close");
+		var dialogCloser42 = document.getElementById("with-bar-ok");
+
+		dialogOpener4.addEventListener("click", function() {
+			dialog4.show();
+		});
+
+		dialogCloser41.addEventListener("click", function() {
+			dialog4.close();
+		});
+
+		dialogCloser42.addEventListener("click", function() {
+			dialog4.close();
+		});
+	</script>
+
+	<pre class="highlight"><figure class="highlight"><pre><code class="language-html" data-lang="html">		<span class="nt">&lt;ui5-dialog</span> <span class="na">id=</span><span class="s">"with-bar-dialog"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;ui5-bar</span> <span class="na">slot=</span><span class="s">"header"</span> <span class="na">design=</span><span class="s">"Header"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;ui5-title</span> <span class="na">level=</span><span class="s">"H5"</span> <span class="na">slot=</span><span class="s">"startContent"</span><span class="nt">&gt;</span>Sample Dialog with Bar<span class="nt">&lt;/ui5-title&gt;</span>
+				<span class="nt">&lt;ui5-button</span>
+				  <span class="na">design=</span><span class="s">"Transparent"</span>
+				  <span class="na">id=</span><span class="s">"with-bar-close"</span>
+				  <span class="na">slot=</span><span class="s">"endContent"</span>
+				  <span class="na">icon=</span><span class="s">"decline"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;/ui5-button&gt;</span>
+			  <span class="nt">&lt;/ui5-bar&gt;</span>
+			  <span class="nt">&lt;div&gt;</span>
+				Adding styles for the parts "header" and "footer" to remove the default Dialog's paddings when ui5-bar is used inside Header and Footer.
+			  <span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;ui5-bar</span> <span class="na">slot=</span><span class="s">"footer"</span> <span class="na">design=</span><span class="s">"Footer"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;ui5-button</span> <span class="na">id=</span><span class="s">"with-bar-ok"</span> <span class="na">design=</span><span class="s">"Emphasized"</span> <span class="na">slot=</span><span class="s">"endContent"</span> <span class="na">style=</span><span class="s">"min-width: 4rem;"</span><span class="nt">&gt;</span>OK<span class="nt">&lt;/ui5-button&gt;</span>
+			<span class="nt">&lt;/ui5-bar&gt;</span>
+		<span class="nt">&lt;/ui5-dialog&gt;</span>
+
+		<span class="nt">&lt;style&gt;</span>
+			<span class="nf">#with-bar-dialog</span><span class="nd">::part</span><span class="o">(</span><span class="nt">header</span><span class="o">),</span>
+			<span class="nf">#with-bar-dialog</span><span class="nd">::part</span><span class="o">(</span><span class="nt">footer</span><span class="o">)</span> <span class="p">{</span>
+				<span class="py">padding-inline</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="nt">&lt;/style&gt;</span>
+	</code></pre></figure></pre>
+</section>
+
+<style>
+	#with-bar-dialog::part(header),
+	#with-bar-dialog::part(footer) {
+		padding-inline: 0;
+	}
+</style>
 
 <section>
 	<h3>Dialogs with various state properties</h3>
