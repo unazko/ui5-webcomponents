@@ -6573,7 +6573,7 @@
 <section>
 	<h3>TabContainer with text and additional-text</h3>
 	<div class="snippet">
-		<ui5-tabcontainer collapsed fixed>
+		<ui5-tabcontainer collapsed fixed tab-layout="Inline">
 			<ui5-tab text="Info" additional-text="3">
 			</ui5-tab>
 			<ui5-tab text="Attachments" additional-text="24" selected>
@@ -6794,6 +6794,42 @@
 	</code></pre></figure></pre>
 </section>
 
+		<!-- Mixed Tabs -->
+
+<section>
+	<div class="snippet">
+		<h3>Tab Container with Tabs with Icons and Tabs without Icons</h3>
+			<ui5-tabcontainer id="tabContainer1" fixed collapsed>
+				<ui5-tab stable-dom-ref="products-ref" text="Products" additional-text="125"></ui5-tab>
+				<ui5-tab-separator></ui5-tab-separator>
+				<ui5-tab icon="sap-icon://menu2" text="Laptops" design="Positive" additional-text="25"></ui5-tab>
+				<ui5-tab icon="sap-icon://menu" text="Monitors" selected design="Critical" additional-text="45"></ui5-tab>
+				<ui5-tab icon="sap-icon://menu2" text="Keyboards" design="Negative" additional-text="15"></ui5-tab>
+				<ui5-tab icon="sap-icon://menu2" disabled text="Disabled" design="Negative" additional-text="40"></ui5-tab>
+				<ui5-tab icon="sap-icon://menu2" text="Neutral" design="Neutral" additional-text="40"></ui5-tab>
+				<ui5-tab icon="sap-icon://menu2" text="Default" additional-text="40"></ui5-tab>
+			</ui5-tabcontainer>
+	</div>
+	<pre class="highlight"><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ui5-tabcontainer</span> <span class="na">id=</span><span class="s">"tabContainer1"</span> <span class="na">fixed</span> <span class="na">collapsed</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">stable-dom-ref=</span><span class="s">"products-ref"</span> <span class="na">text=</span><span class="s">"Products"</span> <span class="na">additional-text=</span><span class="s">"125"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab-separator&gt;&lt;/ui5-tab-separator&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu2"</span> <span class="na">text=</span><span class="s">"Laptops"</span> <span class="na">design=</span><span class="s">"Positive"</span> <span class="na">additional-text=</span><span class="s">"25"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu"</span> <span class="na">text=</span><span class="s">"Monitors"</span> <span class="na">selected</span> <span class="na">design=</span><span class="s">"Critical"</span> <span class="na">additional-text=</span><span class="s">"45"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu2"</span> <span class="na">text=</span><span class="s">"Keyboards"</span> <span class="na">design=</span><span class="s">"Negative"</span> <span class="na">additional-text=</span><span class="s">"15"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu2"</span> <span class="na">disabled</span> <span class="na">text=</span><span class="s">"Disabled"</span> <span class="na">design=</span><span class="s">"Negative"</span> <span class="na">additional-text=</span><span class="s">"40"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu2"</span> <span class="na">text=</span><span class="s">"Neutral"</span> <span class="na">design=</span><span class="s">"Neutral"</span> <span class="na">additional-text=</span><span class="s">"40"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+	<span class="nt">&lt;ui5-tab</span> <span class="na">icon=</span><span class="s">"sap-icon://menu2"</span> <span class="na">text=</span><span class="s">"Default"</span> <span class="na">additional-text=</span><span class="s">"40"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/ui5-tab&gt;</span>
+<span class="nt">&lt;/ui5-tabcontainer&gt;</span>
+	</code></pre></figure></pre>
+</section>
+
 
     <div class="page-container">
       <div class="api-container">
@@ -6842,7 +6878,17 @@ The <code>ui5-tabcontainer</code> can hold two types of entities: <ul> <li><code
                         <div class="cell api-table-content-cell">undefined</div>
                         <div class="cell api-table-content-cell"></div>
                         <div class="cell api-table-content-cell api-table-content-cell-description">
-                            Returns all slotted tabs and their subTabs in a flattened array. The order of tabs is depth-first. For example, given the following slotted elements: <code> <ui5-tabcontainer> <ui5-tab id="First" text="First"> ... <ui5-tab slot="subTabs" id="Nested" text="Nested">...</ui5-tab> </ui5-tab> <ui5-tab id="Second" text="Second">...</ui5-tab> <ui5-tab-separator id="sep"></ui5-tab-separator> <ui5-tab id="Third" text="Third">...</ui5-tab> </ui5-tabcontainer> </code> Calling <code>allItems</code> on this TabContainer will return the instances in the following order: <code>[ ui5-tab#First, ui5-tab#Nested, ui5-tab#Second, ui5-tab-separator#sep, ui5-tab#Third ]</code>
+                            Returns all slotted tabs and their subTabs in a flattened array. The order of tabs is depth-first. For example, given the following slotted elements: <pre><code>
+            	&lt;ui5-tabcontainer&gt;
+            		&lt;ui5-tab id="First" text="First"&gt;
+            			...
+            			&lt;ui5-tab slot="subTabs" id="Nested" text="Nested"&gt;...&lt;/ui5-tab&gt;
+            		&lt;/ui5-tab&gt;
+            		&lt;ui5-tab id="Second" text="Second"&gt;...&lt;/ui5-tab&gt;
+            		&lt;ui5-tab-separator id="sep"&gt;&lt;/ui5-tab-separator&gt;
+            		&lt;ui5-tab id="Third" text="Third"&gt;...&lt;/ui5-tab&gt;
+            	&lt;/ui5-tabcontainer&gt;
+            </code></pre> Calling <code>allItems</code> on this TabContainer will return the instances in the following order: <code>[ ui5-tab#First, ui5-tab#Nested, ui5-tab#Second, ui5-tab-separator#sep, ui5-tab#Third ]</code>
                         </div>
                       </div>
                       <div class="row api-table-roll-odd">
@@ -7034,7 +7080,7 @@ The <code>ui5-tabcontainer</code> can hold two types of entities: <ul> <li><code
                         <div class="cell api-table-content-cell">string</div>
                         <div class="cell api-table-content-cell">&quot;&quot;</div>
                         <div class="cell api-table-content-cell api-table-content-cell-description">
-                            Represents the "additionalText" text, which is displayed in the tab.
+                            Represents the "additionalText" text, which is displayed in the tab. In the cases when in the same time there are tabs with icons and tabs without icons, if a tab has no icon the "additionalText" is displayed larger.
                         </div>
                       </div>
                       <div class="row api-table-roll-odd">

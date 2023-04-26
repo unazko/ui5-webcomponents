@@ -1,5 +1,9 @@
-commit e970fb99e6f44e85b4370000ccd94620f0d86b3b
-Author: Elena Stoyanova <elena.stoyanova@sap.com>
-Date:   Tue Apr 18 17:03:34 2023 +0300
+commit c68133eaae691865e47d5e06e636e4eba7b9a605
+Author: kskondov <konstantin.kondov@sap.com>
+Date:   Tue Apr 25 11:27:08 2023 +0300
 
-    docs(ui5-toast): add samples to Storybook (#6905)
+    fix(ui5-tabcontainer): correct focus outline (#6922)
+    
+    * fix(ui5-tabcontainer): correct focus
+    
+    The focus outline of the overflow buttons now has correct border radius
