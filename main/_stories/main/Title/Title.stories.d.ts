@@ -6,3 +6,4 @@ declare const _default: Meta<Title>;
 export default _default;
 export declare const Basic: UI5StoryArgs<Title, StoryArgsSlots>;
 export declare const Wrapping: UI5StoryArgs<Title, StoryArgsSlots>;
+export declare const WithLink: UI5StoryArgs<Title, StoryArgsSlots>;

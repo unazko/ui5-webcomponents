@@ -1,7 +1,7 @@
-import { html } from "lit-html";
+import { html } from "lit";
 import argTypes, { componentInfo } from "./argTypes.js";
 import { DocsPage } from "../../../.storybook/docs";
-import { ifDefined } from "lit-html/directives/if-defined.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import WrappingType from "@ui5/webcomponents/dist/types/WrappingType.js";
 const component = "ui5-radio-button";
 export default {

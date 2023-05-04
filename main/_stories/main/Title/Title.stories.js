@@ -1,8 +1,8 @@
-import { html } from "lit-html";
+import { html } from "lit";
 import argTypes, { componentInfo } from "./argTypes.js";
 import { DocsPage } from "../../../.storybook/docs";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
-import { ifDefined } from "lit-html/directives/if-defined.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import TitleLevel from "@ui5/webcomponents/dist/types/TitleLevel.js";
 import WrappingType from "@ui5/webcomponents/dist/types/WrappingType.js";
 const component = "ui5-title";
@@ -36,12 +36,12 @@ ${story({ args: { ...args, level: TitleLevel.H6 } })}`;
 ];
 export const Basic = Template.bind({});
 Basic.args = {
-    default: "Title text",
+    default: "Title Text",
 };
 Basic.decorators = [...Template.decorators];
 export const Wrapping = Template.bind({});
 Wrapping.args = {
-    default: "Long title text text text which wraps",
+    default: "Long Title Text Text Text Which Wraps",
     wrappingType: WrappingType.Normal,
 };
 Wrapping.decorators = [
@@ -56,4 +56,9 @@ Wrapping.decorators = [
 ${story()}`;
     },
 ];
+export const WithLink = Template.bind({});
+WithLink.args = {
+    default: `<ui5-link design="Default">With Default Link (57)</ui5-link>`,
+};
+WithLink.decorators = [...Template.decorators];
 //# sourceMappingURL=Title.stories.js.map
