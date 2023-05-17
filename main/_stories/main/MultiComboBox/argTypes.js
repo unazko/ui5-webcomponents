@@ -1,4 +1,13 @@
 export default {
+    "filter": {
+        "control": "select",
+        "options": [
+            "Contains",
+            "None",
+            "StartsWith",
+            "StartsWithPerTerm"
+        ]
+    },
     "open": {
         "control": {
             "type": false

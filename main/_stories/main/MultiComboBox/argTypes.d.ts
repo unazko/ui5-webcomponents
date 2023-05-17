@@ -1,4 +1,8 @@
 declare const _default: {
+    filter: {
+        control: string;
+        options: string[];
+    };
     open: {
         control: {
             type: boolean;
