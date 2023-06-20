@@ -1,5 +1,14 @@
 declare const _default: {
+    mode: {
+        control: string;
+        options: string[];
+    };
     selectedItem: {
+        control: {
+            type: boolean;
+        };
+    };
+    selectedItems: {
         control: {
             type: boolean;
         };

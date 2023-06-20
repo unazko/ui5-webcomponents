@@ -25,7 +25,7 @@ export default {
         }
     },
     "item-delete": {
-        "description": "Fired when the Delete button of any item is pressed. <br><br> <b>Note:</b> A Delete button is displayed on each item, when the <code>ui5-upload-collection</code> <code>mode</code> property is set to <code>Delete</code>.",
+        "description": "Fired when the delete button of any item is pressed.",
         "table": {
             "category": "events"
         },
@@ -34,7 +34,7 @@ export default {
                 {
                     "name": "item",
                     "type": "HTMLElement",
-                    "description": "The <code>ui5-upload-collection-item</code> which was renamed."
+                    "description": "The <code>ui5-upload-collection-item</code> which was deleted."
                 }
             ]
         }

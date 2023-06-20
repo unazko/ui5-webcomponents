@@ -353,6 +353,18 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         
       
     
@@ -392,6 +404,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -1059,6 +1083,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -2044,6 +2080,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/customizing/styles/" class="navigation-list-link">
@@ -2358,6 +2406,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -3262,6 +3322,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/development/custom-ui5-web-components-packages/" class="navigation-list-link">
@@ -3614,6 +3686,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -4675,6 +4759,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/changelog/1.10.0.md/" class="navigation-list-link">
@@ -5120,6 +5216,18 @@
             
               
               <ul class="navigation-list-child-list  visible">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -6910,7 +7018,7 @@
                         <div class="cell api-table-content-cell api-table-content-cell-description">
                             Defines the mode of the <code>ui5-upload-collection</code>.
             
-            <br><br> <b>Note:</b> <ul> <li><code>None</code></li> <li><code>SingleSelect</code></li> <li><code>MultiSelect</code></li> <li><code>Delete</code></li> </ul>
+            <br><br> <b>Note:</b> <ul> <li><code>None</code></li> <li><code>SingleSelect</code></li> <li><code>SingleSelectBegin</code></li> <li><code>SingleSelectEnd</code></li> <li><code>MultiSelect</code></li> <li><code>Delete</code> - this mode has no effect. The delete button is controlled by the <code>hideDeleteButton</code> property of UploadCollectionItem</li> </ul>
                         </div>
                       </div>
                       <div class="row api-table-roll-odd">
@@ -6992,14 +7100,14 @@
                       <div class="row api-table-roll-odd">
                         <div class="cell api-table-content-cell api-table-content-cell-bold">item-delete</div>
                         <div class="cell api-table-content-cell api-table-content-cell-description">
-                        Fired when the Delete button of any item is pressed. <br><br> <b>Note:</b> A Delete button is displayed on each item, when the <code>ui5-upload-collection</code> <code>mode</code> property is set to <code>Delete</code>.
+                        Fired when the delete button of any item is pressed.
                         </div>
                       </div>
             
                         <tr class="api-table-event-param">
                           <div class="api-table-content-event-params-wrapper">
                             <div class="cell api-table-param-name api-table-content-cell api-table-content-cell-bold">item</div>
-                            <div class="cell api-table-event-param-cell api-table-content-cell api-table-content-cell-description"><strong class="bold" >type:</strong> HTMLElement <br/> <strong class="api-table-event-description bold">description:</strong> The <code>ui5-upload-collection-item</code> which was renamed.</div>
+                            <div class="cell api-table-event-param-cell api-table-content-cell api-table-content-cell-description"><strong class="bold" >type:</strong> HTMLElement <br/> <strong class="api-table-event-description bold">description:</strong> The <code>ui5-upload-collection-item</code> which was deleted.</div>
                           </div>
                         </tr>
                       <div class="row api-table-roll-even">
@@ -7092,6 +7200,18 @@
                       </div>
                       <div class="row api-table-roll-even">
                         <div class="cell api-table-content-cell api-table-content-cell-bold">
+                          hideDeleteButton
+                            <br>
+                                 <code>hide-delete-button</code>
+                        </div>
+                        <div class="cell api-table-content-cell">boolean</div>
+                        <div class="cell api-table-content-cell">false</div>
+                        <div class="cell api-table-content-cell api-table-content-cell-description">
+                            By default, the delete button will always be shown, regardless of the <code>ui5-upload-collection</code>'s property <code>mode</code>. Setting this property to <code>true</code> will hide the delete button.
+                        </div>
+                      </div>
+                      <div class="row api-table-roll-odd">
+                        <div class="cell api-table-content-cell api-table-content-cell-bold">
                           hideRetryButton
                             <br>
                                  <code>hide-retry-button</code>
@@ -7102,7 +7222,7 @@
                             Hides the retry button when <code>uploadState</code> property is <code>Error</code>.
                         </div>
                       </div>
-                      <div class="row api-table-roll-odd">
+                      <div class="row api-table-roll-even">
                         <div class="cell api-table-content-cell api-table-content-cell-bold">
                           hideTerminateButton
                             <br>
@@ -7114,7 +7234,7 @@
                             Hides the terminate button when <code>uploadState</code> property is <code>Uploading</code>.
                         </div>
                       </div>
-                      <div class="row api-table-roll-even">
+                      <div class="row api-table-roll-odd">
                         <div class="cell api-table-content-cell api-table-content-cell-bold">
                           progress
                             <br>
@@ -7125,7 +7245,7 @@
                             The upload progress in percentage. <br><br> <b>Note:</b> Expected values are in the interval [0, 100].
                         </div>
                       </div>
-                      <div class="row api-table-roll-odd">
+                      <div class="row api-table-roll-even">
                         <div class="cell api-table-content-cell api-table-content-cell-bold">
                           uploadState
                             <br>

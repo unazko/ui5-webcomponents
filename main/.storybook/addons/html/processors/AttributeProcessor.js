@@ -17,7 +17,7 @@ export class AttributeProcessor {
         });
     }
     removeAttributes(node) {
-        const attributes = node.attributes;
+        const attributes = Array.from(node.attributes);
         for (let attribute of attributes) {
             if (this.test(attribute)) {
                 node.removeAttribute(attribute.name);

@@ -14,7 +14,7 @@
 
 
 
-  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.dd5a9428.js'></script>
+  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.826699eb.js'></script>
   <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/Select.e17517bf.css'>
 </head>
 
@@ -30,6 +30,13 @@
 	<ui5-select id="mySelect">
 		<ui5-option id="firstOption" selected>Cozy</ui5-option>
 		<ui5-option selected>Compact</ui5-option>
+		<ui5-option selected>Condensed</ui5-option>
+	</ui5-select>
+
+	<h2>Change prevention</h2>
+	<ui5-select id="selectPrevent">
+		<ui5-option>Cozy</ui5-option>
+		<ui5-option>Compact</ui5-option>
 		<ui5-option selected>Condensed</ui5-option>
 	</ui5-select>
 
@@ -169,6 +176,11 @@
 	var counterClose = 0;
 
 	// Select
+
+	selectPrevent.addEventListener("ui5-change", function(e) {
+		e.preventDefault();
+	});
+
 	select.addEventListener("ui5-change", function(e) {
 		lbl.innerHTML = "selected item :: " + e.detail.selectedOption.textContent + " :: " + (++counter);
 		inputResult.value = counter;

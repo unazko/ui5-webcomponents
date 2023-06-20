@@ -6,6 +6,29 @@ export default {
             "Navigation"
         ]
     },
+    "backgroundDesign": {
+        "control": "select",
+        "options": [
+            "Solid",
+            "Translucent",
+            "Transparent"
+        ]
+    },
+    "pageIndicatorBackgroundDesign": {
+        "control": "select",
+        "options": [
+            "Solid",
+            "Translucent",
+            "Transparent"
+        ]
+    },
+    "pageIndicatorBorderDesign": {
+        "control": "select",
+        "options": [
+            "Transparent",
+            "Solid"
+        ]
+    },
     "pageIndicatorStyle": {
         "control": "select",
         "options": [

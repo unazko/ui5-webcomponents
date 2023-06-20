@@ -1,5 +1,7 @@
-commit 6f8fc43cdbcd61f92e49770b58624a2ae7587b6c
-Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
-Date:   Thu May 25 16:47:39 2023 +0300
+commit 819d153ba5d82c0e48a642d2ee21ccc0fb61e253
+Author: gmkv <georgi.minkov@sap.com>
+Date:   Tue Jun 20 11:34:59 2023 +0300
 
-     feat(framework): scope component CSS variables (#7044)
+    feat(ui5-side-navigation): update Horizon theme design (#7186)
+    
+    Fixes #7160

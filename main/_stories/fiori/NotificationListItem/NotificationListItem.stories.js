@@ -15,7 +15,7 @@ export default {
             story: {
                 iframeHeight: "470px",
                 inline: false,
-            }
+            },
         },
     },
     argTypes,

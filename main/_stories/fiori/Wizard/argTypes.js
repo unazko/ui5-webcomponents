@@ -1,4 +1,11 @@
 export default {
+    "contentLayout": {
+        "control": "select",
+        "options": [
+            "MultipleSteps",
+            "SingleStep"
+        ]
+    },
     "default": {
         "control": {
             "type": "text"

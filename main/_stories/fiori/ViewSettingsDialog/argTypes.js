@@ -79,7 +79,7 @@ export default {
                     "description": "The selected sort order (true = descending, false = ascending)."
                 },
                 {
-                    "name": "filterItems",
+                    "name": "filters",
                     "type": "Array",
                     "description": "The selected filters items."
                 }
@@ -114,7 +114,7 @@ export default {
                     "description": "The selected sort order (true = descending, false = ascending)."
                 },
                 {
-                    "name": "filterItems",
+                    "name": "filters",
                     "type": "Array",
                     "description": "The selected filters items."
                 }

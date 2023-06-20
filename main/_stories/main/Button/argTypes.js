@@ -10,6 +10,14 @@ export default {
             "Transparent"
         ]
     },
+    "type": {
+        "control": "select",
+        "options": [
+            "Button",
+            "Reset",
+            "Submit"
+        ]
+    },
     "default": {
         "control": {
             "type": "text"

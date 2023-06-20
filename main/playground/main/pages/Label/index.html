@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="utf-8">
-
 	<title>Label</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -21,9 +20,10 @@
 
 	
 	
-  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/test/pages/Label.html.de8543e7.js'></script>
-  <link rel="modulepreload" crossorigin href='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.dd5a9428.js'>
-  <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/Label.95b96777.css'>
+	
+  <script type="module" crossorigin src='https://sap.github.io/ui5-webcomponents/main/assets/test/pages/Label.html.cbca9bb4.js'></script>
+  <link rel="modulepreload" crossorigin href='https://sap.github.io/ui5-webcomponents/main/assets/bundle.common.826699eb.js'>
+  <link rel="stylesheet" href='https://sap.github.io/ui5-webcomponents/main/assets/Label.b443825c.css'>
 </head>
 
 <body class="label1auto">
@@ -156,8 +156,36 @@
 	</section>
 	<div>
 		<ui5-label>Short labelH</ui5-label>
-<ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label>
+		<ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label><ui5-label>Short labelH</ui5-label>
 	</div>
+
+	<section class="group" id="differentLanguages">
+		<h2>Labels in different languages</h2>
+		<ui5-select id="languageSelect">
+			<ui5-option id="en" selected>en</ui5-option>
+			<ui5-option id="fr">fr</ui5-option>
+			<ui5-option id="zh-CN">zh-CN (Simplified Chinese)</ui5-option>
+			<ui5-option id="zh-Hans">zh-Hans (Simplified Chinese)</ui5-option>
+			<ui5-option id="zh-TW">zh-TW (Traditional Chinese)</ui5-option>
+			<ui5-option id="zh-Hant">zh-Hant (Traditional Chinese)</ui5-option>
+		</ui5-select>
+		<div>
+			<ui5-label show-colon></ui5-label>
+			<ui5-input></ui5-input>
+		</div>
+		<div>
+			<ui5-label show-colon required></ui5-label>
+			<ui5-input></ui5-input>
+		</div>
+		<div>
+			<ui5-label show-colon class="width50px"></ui5-label>
+			<ui5-input></ui5-input>
+		</div>
+		<div>
+			<ui5-label show-colon required class="width50px"></ui5-label>
+			<ui5-input></ui5-input>
+		</div>
+	</section>
 
 </body>
 

@@ -353,6 +353,18 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         
       
     
@@ -392,6 +404,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -1059,6 +1083,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -2044,6 +2080,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/customizing/styles/" class="navigation-list-link">
@@ -2358,6 +2406,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -3262,6 +3322,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/development/custom-ui5-web-components-packages/" class="navigation-list-link">
@@ -3614,6 +3686,18 @@
             
               
               <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -4675,6 +4759,18 @@
                   
                 
                   
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                     <li class="navigation-list-item ">
                       
                       <a href="https://sap.github.io/ui5-webcomponents/main/playground/changelog/1.10.0.md/" class="navigation-list-link">
@@ -5120,6 +5216,18 @@
             
               
               <ul class="navigation-list-child-list  visible">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
@@ -6482,10 +6590,11 @@
 <div class="control-tag">&lt;ui5-file-uploader&gt;</div>
 
 <section>
-	<h3>Upload multiple images</h3>
+	<h3>Image Uploader</h3>
 	<div class="snippet">
+		<ui5-label id="image-uploader-ref">Handles multiple image files</ui5-label>
 		<ui5-file-uploader id="fileuploader1" accept="image/*" multiple="true">
-			<ui5-button icon="upload">Upload Images</ui5-button>
+			<ui5-button icon="upload" accessible-name-ref="image-uploader-ref">Upload Images</ui5-button>
 		</ui5-file-uploader>
 		<div id="result"></div>
 		<script>
@@ -6545,10 +6654,11 @@
 </section>
 
 <section>
-	<h3>Upload Single File</h3>
+	<h3>Single File Uploader</h3>
 	<div class="snippet">
+		<ui5-label id="single-file-uploader-ref">Handles a single file</ui5-label>
 		<ui5-file-uploader>
-			<ui5-button>Upload Single File</ui5-button>
+			<ui5-button accessible-name-ref="single-file-uploader-ref">Upload Single File</ui5-button>
 		</ui5-file-uploader>
 	</div>
 	<pre class="highlight"><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ui5-file-uploader&gt;</span>
@@ -6558,10 +6668,11 @@
 </section>
 
 <section>
-	<h3>File Uploader With No Input</h3>
+	<h3>Hidden Input Uploader</h3>
 	<div class="snippet">
+		<ui5-label id="hidden-input-uploader-ref">File uploader with button only shown</ui5-label>
 		<ui5-file-uploader hide-input>
-			<ui5-button>Upload File</ui5-button>
+			<ui5-button accessible-name-ref="hidden-input-uploader-ref">Upload File</ui5-button>
 		</ui5-file-uploader>
 	</div>
 	<pre class="highlight"><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ui5-file-uploader</span> <span class="na">hide-input</span><span class="nt">&gt;</span>

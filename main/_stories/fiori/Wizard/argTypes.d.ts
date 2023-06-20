@@ -1,4 +1,8 @@
 declare const _default: {
+    contentLayout: {
+        control: string;
+        options: string[];
+    };
     default: {
         control: {
             type: string;

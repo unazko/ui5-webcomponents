@@ -3,6 +3,18 @@ declare const _default: {
         control: string;
         options: string[];
     };
+    backgroundDesign: {
+        control: string;
+        options: string[];
+    };
+    pageIndicatorBackgroundDesign: {
+        control: string;
+        options: string[];
+    };
+    pageIndicatorBorderDesign: {
+        control: string;
+        options: string[];
+    };
     pageIndicatorStyle: {
         control: string;
         options: string[];

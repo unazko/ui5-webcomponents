@@ -37,6 +37,19 @@ declare const _default: {
             }[];
         };
     };
+    "before-open": {
+        description: string;
+        table: {
+            category: string;
+        };
+        UI5CustomData: {
+            parameters: {
+                name: string;
+                type: string;
+                description: string;
+            }[];
+        };
+    };
     "item-click": {
         description: string;
         table: {
