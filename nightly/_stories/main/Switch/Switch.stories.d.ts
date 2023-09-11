@@ -9,3 +9,4 @@ export declare const WithText: UI5StoryArgs<Switch, StoryArgsSlots>;
 export declare const Checked: UI5StoryArgs<Switch, StoryArgsSlots>;
 export declare const Disabled: UI5StoryArgs<Switch, StoryArgsSlots>;
 export declare const Design: UI5StoryArgs<Switch, StoryArgsSlots>;
+export declare const RequiredInForm: UI5StoryArgs<Switch, StoryArgsSlots>;

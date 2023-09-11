@@ -6,8 +6,8 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 const component = "ui5-multi-input";
 export default {
     title: "Main/MultiInput",
-    component,
-    subcomponents: { 'Token': 'ui5-token' },
+    component: "MultiInput",
+    subcomponents: { 'Token': 'Token' },
     parameters: {
         docs: {
             page: DocsPage({ ...componentInfo, component })

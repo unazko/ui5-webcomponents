@@ -1,10 +1,7 @@
-commit 2f88dc814dd393748a7482c7f6566d244368c970
-Author: ilhan orhan <ilhan.orhan007@gmail.com>
-Date:   Mon Jul 17 13:57:23 2023 +0300
+commit 208d992b5707ba5f00de3c1311fcc2425916c2c4
+Author: gmkv <georgi.minkov@sap.com>
+Date:   Thu Aug 31 14:49:52 2023 +0300
 
-    fix(framework): fix I18Bundle#getText params TypeScript types (#7310)
+    feat(ui5-badge): update visual design (#7501)
     
-    The I18Bundle#getText method works with both objects and strings,
-    however the type is set to I18nText ( { key: string, defaultText: string } ) and causes TS errors when the method is called with a string as described in the referenced issue.
-    
-    Fixes: #7300
+    Jira: 3113
