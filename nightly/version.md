@@ -1,7 +1,7 @@
-commit 208d992b5707ba5f00de3c1311fcc2425916c2c4
-Author: gmkv <georgi.minkov@sap.com>
-Date:   Thu Aug 31 14:49:52 2023 +0300
+commit b4dea675f5793c28ee9f0123d0e8bf6bd38c0b83
+Author: Stoyan <88034608+hinzzx@users.noreply.github.com>
+Date:   Thu Sep 14 14:02:53 2023 +0300
 
-    feat(ui5-badge): update visual design (#7501)
+    fix(ui5-switch): fix text alignment in all themes (#7416)
     
-    Jira: 3113
+    In order to fix the visual design in all themes, we had to introduce an alternate CSS variable. This was added because in Horizon themes for example, for the Text and Graphical Switch, the variable --_ui5_switch_text_inactive_left needs to have a different value for each of the styles in order to be properly aligned.
