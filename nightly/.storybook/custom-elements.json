@@ -7837,6 +7837,18 @@
                         {
                             "deprecated": false,
                             "kind": "field",
+                            "name": "tooltip",
+                            "privacy": "public",
+                            "static": false,
+                            "type": {
+                                "text": "string"
+                            },
+                            "default": "\"\"",
+                            "description": "Defines the tooltip of the component."
+                        },
+                        {
+                            "deprecated": false,
+                            "kind": "field",
                             "name": "value",
                             "privacy": "public",
                             "static": false,
