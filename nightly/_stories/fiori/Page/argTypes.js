@@ -7,19 +7,34 @@ export default {
             "Transparent"
         ]
     },
+    "header": {
+        "control": {
+            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
+        }
+    },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     },
     "footer": {
         "control": {
             "type": "text"
-        }
-    },
-    "header": {
-        "control": {
-            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     }
 };

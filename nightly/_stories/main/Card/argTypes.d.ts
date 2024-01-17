@@ -3,10 +3,20 @@ declare const _default: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     header: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
 };

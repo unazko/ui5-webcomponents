@@ -1,32 +1,48 @@
 declare const _default: {
+    valueState: {
+        control: string;
+        options: string[];
+    };
     files: {
         control: {
             type: boolean;
         };
     };
-    valueState: {
-        control: string;
-        options: string[];
-    };
     default: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
     valueStateMessage: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     change: {
         description: string;
+        control: {
+            type: boolean;
+        };
         table: {
             category: string;
         };
         UI5CustomData: {
             parameters: {
+                type: {
+                    text: string;
+                };
                 name: string;
-                type: string;
+                _ui5privacy: string;
                 description: string;
             }[];
         };

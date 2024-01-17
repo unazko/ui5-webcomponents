@@ -1,20 +1,4 @@
 export default {
-    "colorScheme": {
-        "control": "select",
-        "options": [
-            "Accent1",
-            "Accent10",
-            "Accent2",
-            "Accent3",
-            "Accent4",
-            "Accent5",
-            "Accent6",
-            "Accent7",
-            "Accent8",
-            "Accent9",
-            "Placeholder"
-        ]
-    },
     "shape": {
         "control": "select",
         "options": [
@@ -25,21 +9,47 @@ export default {
     "size": {
         "control": "select",
         "options": [
-            "L",
-            "M",
+            "XS",
             "S",
-            "XL",
-            "XS"
+            "M",
+            "L",
+            "XL"
         ]
     },
-    "badge": {
-        "control": {
-            "type": "text"
-        }
+    "colorScheme": {
+        "control": "select",
+        "options": [
+            "Accent1",
+            "Accent2",
+            "Accent3",
+            "Accent4",
+            "Accent5",
+            "Accent6",
+            "Accent7",
+            "Accent8",
+            "Accent9",
+            "Accent10",
+            "Placeholder"
+        ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
+        }
+    },
+    "badge": {
+        "control": {
+            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     }
 };

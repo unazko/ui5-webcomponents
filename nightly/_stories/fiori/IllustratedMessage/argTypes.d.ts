@@ -1,25 +1,40 @@
 declare const _default: {
-    name: {
-        control: string;
-        options: string[];
-    };
     size: {
         control: string;
         options: string[];
     };
-    default: {
+    titleLevel: {
+        control: string;
+        options: string[];
+    };
+    title: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
     subtitle: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
-    title: {
+    default: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
 };
@@ -29,7 +44,7 @@ export declare const componentInfo: {
     since: string;
 };
 export type StoryArgsSlots = {
-    default: string;
-    subtitle: string;
     title: string;
+    subtitle: string;
+    default: string;
 };

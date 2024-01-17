@@ -1,35 +1,4 @@
-export default {
-    "endValue": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "startValue": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "labelInterval": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "max": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "min": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "step": {
-        "control": {
-            "type": "number"
-        }
-    }
-};
+export default {};
 export const componentInfo = {
     "package": "@ui5/webcomponents",
     "since": "1.0.0-rc.11"

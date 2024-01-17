@@ -3,26 +3,52 @@ declare const _default: {
         control: {
             type: string;
         };
-    };
-    fixedItems: {
-        control: {
-            type: string;
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
     header: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
+    };
+    fixedItems: {
+        control: {
+            type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     "selection-change": {
         description: string;
+        control: {
+            type: boolean;
+        };
         table: {
             category: string;
         };
         UI5CustomData: {
             parameters: {
+                type: {
+                    text: string;
+                    references: {
+                        name: string;
+                        package: string;
+                        module: string;
+                    }[];
+                };
                 name: string;
-                type: string;
+                _ui5privacy: string;
                 description: string;
             }[];
         };
@@ -35,6 +61,6 @@ export declare const componentInfo: {
 };
 export type StoryArgsSlots = {
     default: string;
-    fixedItems: string;
     header: string;
+    fixedItems: string;
 };

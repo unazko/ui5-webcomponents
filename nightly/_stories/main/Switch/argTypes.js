@@ -2,8 +2,8 @@ export default {
     "design": {
         "control": "select",
         "options": [
-            "Graphical",
-            "Textual"
+            "Textual",
+            "Graphical"
         ]
     }
 };

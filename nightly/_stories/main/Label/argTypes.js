@@ -9,6 +9,11 @@ export default {
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     }
 };

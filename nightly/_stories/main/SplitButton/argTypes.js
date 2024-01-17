@@ -2,17 +2,22 @@ export default {
     "design": {
         "control": "select",
         "options": [
-            "Attention",
             "Default",
-            "Emphasized",
-            "Negative",
             "Positive",
-            "Transparent"
+            "Negative",
+            "Transparent",
+            "Emphasized",
+            "Attention"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     }
 };

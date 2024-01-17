@@ -3,19 +3,29 @@ export default {
         "control": "select",
         "options": [
             "Information",
-            "Negative",
             "Positive",
+            "Negative",
             "Warning"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     },
     "icon": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<IIcon>"
+            }
         }
     }
 };

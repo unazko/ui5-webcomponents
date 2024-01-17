@@ -2,13 +2,18 @@ export default {
     "layout": {
         "control": "select",
         "options": [
-            "Horizontal",
-            "Vertical"
+            "Vertical",
+            "Horizontal"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<ITimelineItem>"
+            }
         }
     }
 };

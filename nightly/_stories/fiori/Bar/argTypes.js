@@ -2,25 +2,40 @@ export default {
     "design": {
         "control": "select",
         "options": [
-            "FloatingFooter",
-            "Footer",
             "Header",
-            "Subheader"
+            "Subheader",
+            "Footer",
+            "FloatingFooter"
         ]
+    },
+    "startContent": {
+        "control": {
+            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
+        }
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     },
     "endContent": {
         "control": {
             "type": "text"
-        }
-    },
-    "startContent": {
-        "control": {
-            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     }
 };

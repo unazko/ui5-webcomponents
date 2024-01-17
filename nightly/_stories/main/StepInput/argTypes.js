@@ -1,42 +1,22 @@
 export default {
-    "max": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "min": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "step": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "value": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "valuePrecision": {
-        "control": {
-            "type": "number"
-        }
-    },
     "valueState": {
         "control": "select",
         "options": [
-            "Error",
-            "Information",
             "None",
             "Success",
-            "Warning"
+            "Warning",
+            "Error",
+            "Information"
         ]
     },
     "valueStateMessage": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     }
 };

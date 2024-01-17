@@ -7,18 +7,42 @@ declare const _default: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     "step-change": {
         description: string;
+        control: {
+            type: boolean;
+        };
         table: {
             category: string;
         };
         UI5CustomData: {
-            parameters: {
+            parameters: ({
+                type: {
+                    text: string;
+                    references: {
+                        name: string;
+                        package: string;
+                        module: string;
+                    }[];
+                };
                 name: string;
-                type: string;
+                _ui5privacy: string;
                 description: string;
-            }[];
+            } | {
+                type: {
+                    text: string;
+                    references?: undefined;
+                };
+                name: string;
+                _ui5privacy: string;
+                description: string;
+            })[];
         };
     };
 };

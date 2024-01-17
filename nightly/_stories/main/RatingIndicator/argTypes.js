@@ -1,15 +1,4 @@
-export default {
-    "max": {
-        "control": {
-            "type": "number"
-        }
-    },
-    "value": {
-        "control": {
-            "type": "number"
-        }
-    }
-};
+export default {};
 export const componentInfo = {
     "package": "@ui5/webcomponents",
     "since": "1.0.0-rc.8"

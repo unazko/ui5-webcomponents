@@ -1,15 +1,4 @@
-declare const _default: {
-    max: {
-        control: {
-            type: string;
-        };
-    };
-    value: {
-        control: {
-            type: string;
-        };
-    };
-};
+declare const _default: {};
 export default _default;
 export declare const componentInfo: {
     package: string;

@@ -1,9 +1,9 @@
-commit 02ea9a451635b9b0d75833889e7cdf3c022cd137
-Author: ilhan orhan <ilhan.orhan007@gmail.com>
-Date:   Mon Dec 18 21:18:12 2023 +0200
+commit ec1fd1068baa740e635cdf3d8607d9a101033ef9
+Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
+Date:   Wed Jan 17 15:33:01 2024 +0000
 
-    feat(ui5-select): introduce `readonly` state (#7950)
+    fix(ui5-breadcrumbs): remove char separators from accessibility announcement (#8099)
     
-    Introduces readonly state to the Select web component and align the readonly styles for all input fields to the latest specs. Changes in Select API: new property readonly; VD: respective visual styling for readonly state, dropdown icon is not displayed; InteractionDesign: dropdown remains always closed, no changes in selection allowed; a11y: new aria attribute aria-readonly true|false accordingly.
+    * fix(ui5-breadcrumbs): remove char separators from accessibility announcement
     
-    Fixes: #7727
+    * chore: adjust edge case for failing test

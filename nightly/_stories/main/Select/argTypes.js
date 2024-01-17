@@ -1,64 +1,100 @@
 export default {
-    "menu": {
-        "control": {
-            "type": "text"
-        }
+    "valueState": {
+        "control": "select",
+        "options": [
+            "None",
+            "Success",
+            "Warning",
+            "Error",
+            "Information"
+        ]
     },
     "selectedOption": {
         "control": {
             "type": false
         }
     },
-    "valueState": {
-        "control": "select",
-        "options": [
-            "Error",
-            "Information",
-            "None",
-            "Success",
-            "Warning"
-        ]
-    },
     "default": {
         "control": {
             "type": "text"
-        }
-    },
-    "label": {
-        "control": {
-            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<IOption>"
+            }
         }
     },
     "valueStateMessage": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
+        }
+    },
+    "label": {
+        "control": {
+            "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<HTMLElement>"
+            }
         }
     },
     "change": {
         "description": "Fired when the selected option changes.",
+        "control": {
+            "type": false
+        },
         "table": {
             "category": "events"
         },
         "UI5CustomData": {
             "parameters": [
                 {
+                    "type": {
+                        "text": "IOption",
+                        "references": [
+                            {
+                                "name": "IOption",
+                                "package": "@ui5/webcomponents",
+                                "module": "dist/Interfaces.js"
+                            }
+                        ]
+                    },
                     "name": "selectedOption",
-                    "type": "HTMLElement",
+                    "_ui5privacy": "public",
                     "description": "the selected option."
                 }
             ]
         }
     },
     "live-change": {
-        "description": "Fired when the user navigates through the options, but the selection is not finalized, or when pressing the ESC key to revert the current selection.",
+        "description": "Fired when the user navigates through the options, but the selection is not finalized,\nor when pressing the ESC key to revert the current selection.",
+        "control": {
+            "type": false
+        },
         "table": {
             "category": "events"
         },
         "UI5CustomData": {
             "parameters": [
                 {
+                    "type": {
+                        "text": "IOption",
+                        "references": [
+                            {
+                                "name": "IOption",
+                                "package": "@ui5/webcomponents",
+                                "module": "dist/Interfaces.js"
+                            }
+                        ]
+                    },
                     "name": "selectedOption",
-                    "type": "HTMLElement",
+                    "_ui5privacy": "public",
                     "description": "the selected option."
                 }
             ]

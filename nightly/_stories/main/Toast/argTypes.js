@@ -1,32 +1,39 @@
 export default {
-    "duration": {
-        "control": {
-            "type": "number"
-        }
-    },
     "placement": {
         "control": "select",
         "options": [
-            "BottomCenter",
-            "BottomEnd",
-            "BottomStart",
-            "MiddleCenter",
-            "MiddleEnd",
-            "MiddleStart",
+            "TopStart",
             "TopCenter",
             "TopEnd",
-            "TopStart"
+            "MiddleStart",
+            "MiddleCenter",
+            "MiddleEnd",
+            "BottomStart",
+            "BottomCenter",
+            "BottomEnd"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     },
     "show": {
         "description": "Shows the component.",
         "table": {
             "category": "methods"
+        },
+        "UI5CustomData": {
+            "returnValue": {
+                "type": {
+                    "text": "void"
+                }
+            }
         }
     }
 };

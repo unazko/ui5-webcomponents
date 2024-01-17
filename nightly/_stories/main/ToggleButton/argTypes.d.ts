@@ -11,6 +11,11 @@ declare const _default: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
 };
 export default _default;

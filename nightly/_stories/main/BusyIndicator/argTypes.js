@@ -1,20 +1,20 @@
 export default {
-    "delay": {
-        "control": {
-            "type": "number"
-        }
-    },
     "size": {
         "control": "select",
         "options": [
-            "Large",
+            "Small",
             "Medium",
-            "Small"
+            "Large"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     }
 };

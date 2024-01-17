@@ -1,8 +1,4 @@
 declare const _default: {
-    colorScheme: {
-        control: string;
-        options: string[];
-    };
     shape: {
         control: string;
         options: string[];
@@ -11,14 +7,28 @@ declare const _default: {
         control: string;
         options: string[];
     };
-    badge: {
-        control: {
-            type: string;
-        };
+    colorScheme: {
+        control: string;
+        options: string[];
     };
     default: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
+    };
+    badge: {
+        control: {
+            type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
 };
@@ -28,6 +38,6 @@ export declare const componentInfo: {
     since: string;
 };
 export type StoryArgsSlots = {
-    badge: string;
     default: string;
+    badge: string;
 };

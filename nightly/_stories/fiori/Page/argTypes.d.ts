@@ -3,19 +3,34 @@ declare const _default: {
         control: string;
         options: string[];
     };
+    header: {
+        control: {
+            type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
+    };
     default: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
     footer: {
         control: {
             type: string;
         };
-    };
-    header: {
-        control: {
-            type: string;
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
 };
@@ -25,7 +40,7 @@ export declare const componentInfo: {
     since: string;
 };
 export type StoryArgsSlots = {
+    header: string;
     default: string;
     footer: string;
-    header: string;
 };

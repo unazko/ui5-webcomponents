@@ -1,37 +1,53 @@
 declare const _default: {
-    colorScheme: {
-        control: {
-            type: boolean;
-        };
+    type: {
+        control: string;
+        options: string[];
     };
     hiddenItems: {
         control: {
             type: boolean;
         };
     };
-    type: {
-        control: string;
-        options: string[];
+    colorScheme: {
+        control: {
+            type: boolean;
+        };
     };
     default: {
         control: {
             type: string;
+        };
+        table: {
+            type: {
+                summary: string;
+            };
         };
     };
     overflowButton: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     click: {
         description: string;
+        control: {
+            type: boolean;
+        };
         table: {
             category: string;
         };
         UI5CustomData: {
             parameters: {
+                type: {
+                    text: string;
+                };
                 name: string;
-                type: string;
+                _ui5privacy: string;
                 description: string;
             }[];
         };

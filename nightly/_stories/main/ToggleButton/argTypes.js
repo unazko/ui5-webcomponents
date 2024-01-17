@@ -2,25 +2,30 @@ export default {
     "design": {
         "control": "select",
         "options": [
-            "Attention",
             "Default",
-            "Emphasized",
-            "Negative",
             "Positive",
-            "Transparent"
+            "Negative",
+            "Transparent",
+            "Emphasized",
+            "Attention"
         ]
     },
     "type": {
         "control": "select",
         "options": [
             "Button",
-            "Reset",
-            "Submit"
+            "Submit",
+            "Reset"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<Node>"
+            }
         }
     }
 };

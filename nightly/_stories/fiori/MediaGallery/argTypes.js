@@ -3,8 +3,8 @@ export default {
         "control": "select",
         "options": [
             "Auto",
-            "Horizontal",
-            "Vertical"
+            "Vertical",
+            "Horizontal"
         ]
     },
     "menuHorizontalAlign": {
@@ -17,25 +17,36 @@ export default {
     "menuVerticalAlign": {
         "control": "select",
         "options": [
-            "Bottom",
-            "Top"
+            "Top",
+            "Bottom"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<IMediaGalleryItem>"
+            }
         }
     },
     "selection-change": {
         "description": "Fired when selection is changed by user interaction.",
+        "control": {
+            "type": false
+        },
         "table": {
             "category": "events"
         },
         "UI5CustomData": {
             "parameters": [
                 {
+                    "type": {
+                        "text": "HTMLElement"
+                    },
                     "name": "item",
-                    "type": "HTMLElement",
+                    "_ui5privacy": "public",
                     "description": "the selected item."
                 }
             ]

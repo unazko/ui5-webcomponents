@@ -11,16 +11,27 @@ declare const _default: {
         control: {
             type: string;
         };
+        table: {
+            type: {
+                summary: string;
+            };
+        };
     };
     "item-click": {
         description: string;
+        control: {
+            type: boolean;
+        };
         table: {
             category: string;
         };
         UI5CustomData: {
             parameters: {
+                type: {
+                    text: string;
+                };
                 name: string;
-                type: string;
+                _ui5privacy: string;
                 description: string;
             }[];
         };

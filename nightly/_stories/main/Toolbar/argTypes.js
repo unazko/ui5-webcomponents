@@ -2,13 +2,31 @@ export default {
     "alignContent": {
         "control": "select",
         "options": [
-            "End",
-            "Start"
+            "Start",
+            "End"
         ]
     },
     "default": {
         "control": {
             "type": "text"
+        },
+        "table": {
+            "type": {
+                "summary": "Array<ToolbarItem>"
+            }
+        }
+    },
+    "isOverflowOpen": {
+        "description": "Returns if the overflow popup is open.",
+        "table": {
+            "category": "methods"
+        },
+        "UI5CustomData": {
+            "returnValue": {
+                "type": {
+                    "text": "Promise<boolean>"
+                }
+            }
         }
     }
 };
