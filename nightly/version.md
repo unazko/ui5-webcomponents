@@ -1,9 +1,7 @@
-commit ec1fd1068baa740e635cdf3d8607d9a101033ef9
-Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
-Date:   Wed Jan 17 15:33:01 2024 +0000
+commit a2c37e4fdcc084a19ac325a61636a0d1dd555974
+Author: PetyaMarkovaBogdanova <petya.markova-bogdanova@sap.com>
+Date:   Fri Jan 26 10:50:09 2024 +0200
 
-    fix(ui5-breadcrumbs): remove char separators from accessibility announcement (#8099)
+    fix(ui5-toolbar-select): options added to bundle (#8183)
     
-    * fix(ui5-breadcrumbs): remove char separators from accessibility announcement
-    
-    * chore: adjust edge case for failing test
+    Co-authored-by: PetyaMarkovaBogdanova <petya.markova@sap.com>
