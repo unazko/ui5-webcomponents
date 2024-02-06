@@ -70,7 +70,7 @@ export default {
                             {
                                 "name": "IMultiComboBoxItem",
                                 "package": "@ui5/webcomponents",
-                                "module": "dist/Interfaces.js"
+                                "module": "dist/MultiComboBox.js"
                             }
                         ]
                     },
@@ -84,6 +84,7 @@ export default {
 };
 export const componentInfo = {
     "package": "@ui5/webcomponents",
-    "since": "0.11.0"
+    "since": "0.11.0",
+    "tagName": "ui5-multi-combobox"
 };
 //# sourceMappingURL=argTypes.js.map

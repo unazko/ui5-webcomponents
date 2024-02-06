@@ -12,7 +12,7 @@ export default {
                         {
                             "name": "ITab",
                             "package": "@ui5/webcomponents",
-                            "module": "dist/Interfaces.js"
+                            "module": "dist/TabContainer.js"
                         }
                     ]
                 }
@@ -21,6 +21,8 @@ export default {
     }
 };
 export const componentInfo = {
-    "package": "@ui5/webcomponents"
+    "package": "@ui5/webcomponents",
+    "tagName": "ui5-tab-separator",
+    "showDefaultStoryOnly": true
 };
 //# sourceMappingURL=argTypes.js.map
