@@ -1,7 +1,5 @@
-commit 3ea5c664aaf20908ab04a933a7587c35206aebf6
-Author: niyap <38278268+niyap@users.noreply.github.com>
-Date:   Tue Feb 6 14:23:40 2024 +0200
+commit 05d09a6ed330b1743e7e90205da47066b9ac0afa
+Author: Dobrin Dimchev <dobrin.dimchev@sap.com>
+Date:   Wed Feb 7 00:40:44 2024 -0800
 
-    fix(ui5-table): prevent load-more event on initial load (#8240)
-    
-    Co-authored-by: Nia Peeva <niya.peeva@sap.com>
+    chore: update google-site-verification meta tag (#8251)

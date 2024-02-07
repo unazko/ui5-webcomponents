@@ -6061,7 +6061,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType",
@@ -9864,7 +9864,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType"
@@ -15442,7 +15442,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType",
@@ -20172,7 +20172,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType",
@@ -20458,7 +20458,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType",
@@ -20763,7 +20763,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType",
@@ -27003,7 +27003,7 @@
                                     }
                                 ]
                             },
-                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br>\n<b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
+                            "description": "Defines the visual indication and behavior of the list items.\nAvailable options are <code>Active</code> (by default), <code>Inactive</code>, <code>Detail</code> and <code>Navigation</code>.\n<br><br> <b>Note:</b> When set to <code>Active</code> or <code>Navigation</code>, the item will provide visual response upon press and hover,\nwhile with type <code>Inactive</code> and <code>Detail</code> - will not.",
                             "default": "\"Active\"",
                             "privacy": "public",
                             "_ui5validator": "ListItemType"
