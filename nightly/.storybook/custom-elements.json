@@ -712,6 +712,51 @@
         },
         {
             "kind": "javascript-module",
+            "path": "dist/types/ButtonAccessibleRole.js",
+            "declarations": [
+                {
+                    "kind": "enum",
+                    "name": "ButtonAccessibleRole",
+                    "description": "Button accessible roles.",
+                    "_ui5privacy": "public",
+                    "_ui5since": "1.23",
+                    "members": [
+                        {
+                            "kind": "field",
+                            "static": true,
+                            "privacy": "public",
+                            "description": "Represents Default (button) ARIA role.",
+                            "default": "Button",
+                            "name": "Button",
+                            "readonly": true
+                        },
+                        {
+                            "kind": "field",
+                            "static": true,
+                            "privacy": "public",
+                            "description": "Represents the ARIA role \"link\".",
+                            "default": "Link",
+                            "name": "Link",
+                            "readonly": true
+                        }
+                    ],
+                    "_ui5package": "@ui5/webcomponents",
+                    "tagName": "ButtonAccessibleRole"
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "js",
+                    "name": "default",
+                    "declaration": {
+                        "name": "ButtonAccessibleRole",
+                        "module": "dist/types/ButtonAccessibleRole.js"
+                    }
+                }
+            ]
+        },
+        {
+            "kind": "javascript-module",
             "path": "dist/types/ButtonDesign.js",
             "declarations": [
                 {
@@ -4155,6 +4200,25 @@
                             "privacy": "public",
                             "_ui5since": "1.15.0",
                             "_ui5validator": "ButtonType"
+                        },
+                        {
+                            "kind": "field",
+                            "name": "accessibleRole",
+                            "type": {
+                                "text": "ButtonAccessibleRole",
+                                "references": [
+                                    {
+                                        "name": "ButtonAccessibleRole",
+                                        "package": "@ui5/webcomponents",
+                                        "module": "dist/types/ButtonAccessibleRole.js"
+                                    }
+                                ]
+                            },
+                            "description": "Describes the accessibility role of the button.\n\nNOTE: Use link role only with a press handler, which performs a navigation. In all other scenarios the default button semantics are recommended.",
+                            "default": "\"Button\"",
+                            "privacy": "public",
+                            "_ui5since": "1.23",
+                            "_ui5validator": "ButtonAccessibleRole"
                         }
                     ],
                     "events": [
@@ -14601,6 +14665,29 @@
                                 "name": "Button",
                                 "module": "dist/Button.js"
                             }
+                        },
+                        {
+                            "kind": "field",
+                            "name": "accessibleRole",
+                            "type": {
+                                "text": "ButtonAccessibleRole",
+                                "references": [
+                                    {
+                                        "name": "ButtonAccessibleRole",
+                                        "package": "@ui5/webcomponents",
+                                        "module": "dist/types/ButtonAccessibleRole.js"
+                                    }
+                                ]
+                            },
+                            "description": "Describes the accessibility role of the button.\n\nNOTE: Use link role only with a press handler, which performs a navigation. In all other scenarios the default button semantics are recommended.",
+                            "default": "\"Button\"",
+                            "privacy": "public",
+                            "_ui5since": "1.23",
+                            "_ui5validator": "ButtonAccessibleRole",
+                            "inheritedFrom": {
+                                "name": "Button",
+                                "module": "dist/Button.js"
+                            }
                         }
                     ],
                     "superclass": {
@@ -19274,6 +19361,29 @@
                             "privacy": "public",
                             "_ui5since": "1.15.0",
                             "_ui5validator": "ButtonType",
+                            "inheritedFrom": {
+                                "name": "Button",
+                                "module": "dist/Button.js"
+                            }
+                        },
+                        {
+                            "kind": "field",
+                            "name": "accessibleRole",
+                            "type": {
+                                "text": "ButtonAccessibleRole",
+                                "references": [
+                                    {
+                                        "name": "ButtonAccessibleRole",
+                                        "package": "@ui5/webcomponents",
+                                        "module": "dist/types/ButtonAccessibleRole.js"
+                                    }
+                                ]
+                            },
+                            "description": "Describes the accessibility role of the button.\n\nNOTE: Use link role only with a press handler, which performs a navigation. In all other scenarios the default button semantics are recommended.",
+                            "default": "\"Button\"",
+                            "privacy": "public",
+                            "_ui5since": "1.23",
+                            "_ui5validator": "ButtonAccessibleRole",
                             "inheritedFrom": {
                                 "name": "Button",
                                 "module": "dist/Button.js"

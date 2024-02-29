@@ -1,13 +1,9 @@
-commit bd33dc527ed2d96224f5dbef03d87506defa227f
-Author: Boyan Rakilovski <boyan.rakilovski@sap.com>
-Date:   Wed Feb 28 16:41:01 2024 +0200
+commit e864ca14729f8a40d827c89db78db4376b73e324
+Author: SAP LX Lab Service Account <tmsatsls+github.com_service-tip-git@sap.com>
+Date:   Thu Feb 29 08:43:19 2024 -0300
 
-    fix(ui5-menu): improve focus handling (#8348)
+    Translation Delivery (#8368)
     
-    fix(ui5-menu): dispatch internal focus in event
+    [INTERNAL] Translation delivery: commit by LX Lab
     
-    - We no longer count on the ui5-responsive popover to retrieve
-    the focus over ui5-menu-item opener on ui5-menu close.
-    
-    - There is a differentiation between mouse and keyboard interactions
-    aimed to retrieve the focus to the opener element on ui5-menu close.
+    Change-Id: Ifa515e79f5cc7144b37746af45170a59a9f99cce
