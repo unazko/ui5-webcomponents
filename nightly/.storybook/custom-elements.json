@@ -18314,6 +18314,24 @@
                             },
                             "description": "Fired when the value of the component changes at each keystroke or when\nsomething is pasted.",
                             "_ui5since": "1.0.0-rc.5"
+                        },
+                        {
+                            "name": "select",
+                            "_ui5privacy": "public",
+                            "type": {
+                                "text": "CustomEvent"
+                            },
+                            "description": "Fired when some text has been selected.",
+                            "_ui5since": "1.23.0"
+                        },
+                        {
+                            "name": "scroll",
+                            "_ui5privacy": "public",
+                            "type": {
+                                "text": "CustomEvent"
+                            },
+                            "description": "Fired when textarea is scrolled.",
+                            "_ui5since": "1.23.0"
                         }
                     ],
                     "superclass": {
