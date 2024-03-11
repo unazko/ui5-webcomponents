@@ -78,10 +78,30 @@ declare const _default: {
                 name: string;
                 _ui5privacy: string;
                 description: string;
+                _ui5since: string;
             }[];
         };
     };
     "before-close": {
+        description: string;
+        control: {
+            type: boolean;
+        };
+        table: {
+            category: string;
+        };
+        UI5CustomData: {
+            parameters: {
+                type: {
+                    text: string;
+                };
+                name: string;
+                _ui5privacy: string;
+                description: string;
+            }[];
+        };
+    };
+    "item-focus": {
         description: string;
         control: {
             type: boolean;
