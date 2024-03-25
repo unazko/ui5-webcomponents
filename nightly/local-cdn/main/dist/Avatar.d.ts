@@ -51,16 +51,6 @@ declare class Avatar extends UI5Element implements ITabbable, IAvatarGroupItem {
      */
     interactive: boolean;
     /**
-     * Indicates if the elements is on focus
-     * @private
-     */
-    focused: boolean;
-    /**
-     * Indicates if the elements is pressed
-     * @private
-     */
-    pressed: boolean;
-    /**
      * Defines the name of the UI5 Icon, that will be displayed.
      *
      * **Note:** If `image` slot is provided, the property will be ignored.
@@ -205,8 +195,6 @@ declare class Avatar extends UI5Element implements ITabbable, IAvatarGroupItem {
     _onkeydown(e: KeyboardEvent): void;
     _onkeyup(e: KeyboardEvent): void;
     _fireClick(): void;
-    _onfocusout(): void;
-    _onfocusin(): void;
     _getAriaHasPopup(): string | undefined;
 }
 export default Avatar;
