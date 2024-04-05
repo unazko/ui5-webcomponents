@@ -3,21 +3,16 @@ import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
 import type { ListSelectionChangeEventDetail } from "@ui5/webcomponents/dist/List.js";
 import ListMode from "@ui5/webcomponents/dist/types/ListMode.js";
 import "./illustrations/Tent.js";
+import type UploadCollectionItem from "./UploadCollectionItem.js";
 import "@ui5/webcomponents-icons/dist/upload-to-cloud.js";
 import "@ui5/webcomponents-icons/dist/document.js";
 import type { DnDEventListener, DnDEventListenerParam } from "./upload-utils/UploadCollectionBodyDnD.js";
 import UploadCollectionDnDOverlayMode from "./types/UploadCollectionDnDMode.js";
-/**
- * Interface for components that may be slotted inside `ui5-upload-collection` as items
- * @public
- */
-interface IUploadCollectionItem extends HTMLElement {
-}
 type UploadCollectionSelectionChangeEventDetail = {
-    selectedItems: Array<IUploadCollectionItem>;
+    selectedItems: Array<UploadCollectionItem>;
 };
 type UploadCollectionItemDeleteEventDetail = {
-    item: IUploadCollectionItem;
+    item: UploadCollectionItem;
 };
 /**
  * @class
@@ -86,7 +81,7 @@ declare class UploadCollection extends UI5Element {
      * **Note:** Use `ui5-upload-collection-item` for the intended design.
      * @public
      */
-    items: Array<IUploadCollectionItem>;
+    items: Array<UploadCollectionItem>;
     /**
      * Defines the `ui5-upload-collection` header.
      *
@@ -134,4 +129,4 @@ declare class UploadCollection extends UI5Element {
     get _dndOverlayText(): string;
 }
 export default UploadCollection;
-export type { IUploadCollectionItem, UploadCollectionItemDeleteEventDetail, UploadCollectionSelectionChangeEventDetail, };
+export type { UploadCollectionItemDeleteEventDetail, UploadCollectionSelectionChangeEventDetail, };

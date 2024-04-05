@@ -43,7 +43,6 @@ import UploadCollectionItemCss from "./generated/themes/UploadCollectionItem.css
  * @constructor
  * @extends ListItem
  * @public
- * @implements {IUploadCollectionItem}
  * @slot {Node[]} default - Hold the description of the `ui5-upload-collection-item`. Will be shown below the file name.
  * @since 1.0.0-rc.7
  */

@@ -5,7 +5,6 @@ import UploadState from "./types/UploadState.js";
 import "@ui5/webcomponents-icons/dist/refresh.js";
 import "@ui5/webcomponents-icons/dist/stop.js";
 import "@ui5/webcomponents-icons/dist/edit.js";
-import type { IUploadCollectionItem } from "./UploadCollection.js";
 /**
  * @class
  *
@@ -18,11 +17,10 @@ import type { IUploadCollectionItem } from "./UploadCollection.js";
  * @constructor
  * @extends ListItem
  * @public
- * @implements {IUploadCollectionItem}
  * @slot {Node[]} default - Hold the description of the `ui5-upload-collection-item`. Will be shown below the file name.
  * @since 1.0.0-rc.7
  */
-declare class UploadCollectionItem extends ListItem implements IUploadCollectionItem {
+declare class UploadCollectionItem extends ListItem {
     /**
      * Holds an instance of `File` associated with this item.
      * @default null

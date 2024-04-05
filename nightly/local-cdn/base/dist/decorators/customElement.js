@@ -24,9 +24,8 @@ const customElement = (tagNameOrComponentSettings = {}) => {
         if (fastNavigation) {
             target.metadata.fastNavigation = fastNavigation;
         }
-        ["render", "renderer", "template", "staticAreaTemplate", "styles", "staticAreaStyles", "dependencies"].forEach((customElementEntity) => {
-            const _customElementEntity = customElementEntity === "render" ? "renderer" : customElementEntity;
-            const customElementEntityValue = tagNameOrComponentSettings[_customElementEntity];
+        ["renderer", "template", "styles", "dependencies"].forEach((customElementEntity) => {
+            const customElementEntityValue = tagNameOrComponentSettings[customElementEntity];
             customElementEntityValue && Object.defineProperty(target, customElementEntity, {
                 get: () => customElementEntityValue,
             });

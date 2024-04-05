@@ -24,7 +24,7 @@ import cardHeaderCss from "./generated/themes/CardHeader.css.js";
  * ### Overview
  *
  * The `ui5-card-header` is a component, meant to be used as a header of the `ui5-card` component.
- * It displays valuable information, that can be defined with several properties, such as: `titleText`, `subtitleText`, `status`
+ * It displays valuable information, that can be defined with several properties, such as: `titleText`, `subtitleText`, `additionalText`
  * and two slots: `avatar` and `action`.
  *
  * ### Keyboard handling
@@ -34,14 +34,13 @@ import cardHeaderCss from "./generated/themes/CardHeader.css.js";
  *
  * `import "@ui5/webcomponents/dist/CardHeader";`
  * @constructor
- * @implements {ICardHeader}
  * @extends UI5Element
  * @public
  * @since 1.0.0-rc.15
  * @csspart root - Used to style the root DOM element of the CardHeader
  * @csspart title - Used to style the title of the CardHeader
  * @csspart subtitle - Used to style the subtitle of the CardHeader
- * @csspart status - Used to style the status of the CardHeader
+ * @csspart additional-text - Used to style the additional text of the CardHeader
  */
 let CardHeader = CardHeader_1 = class CardHeader extends UI5Element {
     get classes() {
@@ -74,8 +73,8 @@ let CardHeader = CardHeader_1 = class CardHeader extends UI5Element {
         if (this.subtitleText) {
             labels.push(`${this._id}-subtitle`);
         }
-        if (this.status) {
-            labels.push(`${this._id}-status`);
+        if (this.additionalText) {
+            labels.push(`${this._id}-additionalText`);
         }
         if (this.hasAvatar) {
             labels.push(`${this._id}-avatar`);
@@ -138,7 +137,7 @@ __decorate([
 ], CardHeader.prototype, "subtitleText", void 0);
 __decorate([
     property()
-], CardHeader.prototype, "status", void 0);
+], CardHeader.prototype, "additionalText", void 0);
 __decorate([
     property({ type: Boolean })
 ], CardHeader.prototype, "interactive", void 0);

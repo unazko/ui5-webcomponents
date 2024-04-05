@@ -94,10 +94,6 @@ let BusyIndicator = BusyIndicator_1 = class BusyIndicator extends UI5Element {
             root: {
                 "ui5-busy-indicator-root": true,
             },
-            textPosition: {
-                "ui5-busy-indicator-text-placement-top ": this.textPlacement === BusyIndicatorTextPlacement.Top,
-                "ui5-busy-indicator-text-placement-bottom ": this.textPlacement === BusyIndicatorTextPlacement.Bottom,
-            },
         };
     }
     get textPosition() {
@@ -155,7 +151,7 @@ __decorate([
     property()
 ], BusyIndicator.prototype, "text", void 0);
 __decorate([
-    property({ type: BusyIndicatorSize, defaultValue: BusyIndicatorSize.Medium })
+    property({ type: BusyIndicatorSize, defaultValue: BusyIndicatorSize.M })
 ], BusyIndicator.prototype, "size", void 0);
 __decorate([
     property({ type: Boolean })

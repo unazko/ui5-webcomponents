@@ -1,5 +1,7 @@
-commit 04f1ef72fb5fa69035aca79e65de56ed14fc6aa5
-Author: Peter Skelin <petar.skelin@sap.com>
-Date:   Mon Mar 25 17:41:27 2024 +0200
+commit 7db596430be564d562f0be24d834020745765e7a
+Author: LilyanaOviPe <82088805+LilyanaOviPe@users.noreply.github.com>
+Date:   Fri Apr 5 15:28:49 2024 +0300
 
-    chore: update chromedriver (#8532)
+    docs: update 08-scrollbars-customization.md (#8654)
+    
+    Documentation review.
