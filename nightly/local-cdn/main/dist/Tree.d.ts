@@ -1,7 +1,7 @@
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import type TreeItemBase from "./TreeItemBase.js";
 import TreeList from "./TreeList.js";
-import ListMode from "./types/ListMode.js";
+import ListSelectionMode from "./types/ListSelectionMode.js";
 import type { TreeItemBaseToggleEventDetail, TreeItemBaseStepInEventDetail, TreeItemBaseStepOutEventDetail } from "./TreeItemBase.js";
 import type { ListItemClickEventDetail, ListItemDeleteEventDetail, ListItemFocusEventDetail, ListSelectionChangeEventDetail } from "./List.js";
 type TreeItemEventDetail = {
@@ -48,7 +48,7 @@ type WalkCallback = (item: TreeItemBase, level: number, index: number) => void;
  * - [Left] - Goes up the tree and collapses the tree nodes.
  *
  * The user can use the following keyboard shortcuts to perform selection,
- * when the `mode` property is in use:
+ * when the `selectionMode` property is in use:
  *
  * - [Space] - Selects the currently focused item upon keyup.
  * - [Enter]  - Selects the currently focused item upon keydown.
@@ -64,12 +64,12 @@ type WalkCallback = (item: TreeItemBase, level: number, index: number) => void;
  */
 declare class Tree extends UI5Element {
     /**
-     * Defines the mode of the component. Since the tree uses a `ui5-list` to display its structure,
+     * Defines the selection mode of the component. Since the tree uses a `ui5-list` to display its structure,
      * the tree modes are exactly the same as the list modes, and are all applicable.
      * @public
      * @default "None"
      */
-    mode: `${ListMode}`;
+    selectionMode: `${ListSelectionMode}`;
     /**
      * Defines the text that is displayed when the component contains no items.
      * @default ""

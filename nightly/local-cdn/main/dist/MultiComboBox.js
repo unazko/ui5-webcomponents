@@ -1102,7 +1102,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
         return !isPhone() && (this.focused || this._tokenizerFocused);
     }
     get selectedItemsListMode() {
-        return this.readonly ? "None" : "MultiSelect";
+        return this.readonly ? "None" : "Multiple";
     }
     get _listItemsType() {
         return this.readonly ? "Inactive" : "Active";

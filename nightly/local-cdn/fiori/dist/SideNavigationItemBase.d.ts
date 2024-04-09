@@ -40,6 +40,7 @@ declare class SideNavigationItemBase extends UI5Element implements ITabbable {
     sideNavCollapsed: boolean;
     inPopover: boolean;
     _sideNavigation: SideNavigation;
+    onEnterDOM(): void;
     get _tooltip(): string | undefined;
     get classesArray(): string[];
     get _classes(): string;

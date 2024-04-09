@@ -1,7 +1,11 @@
-commit 7db596430be564d562f0be24d834020745765e7a
-Author: LilyanaOviPe <82088805+LilyanaOviPe@users.noreply.github.com>
-Date:   Fri Apr 5 15:28:49 2024 +0300
+commit ce2829619eceb1dca26ca17b2b6d0ab253caf076
+Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
+Date:   Mon Apr 8 20:37:18 2024 +0300
 
-    docs: update 08-scrollbars-customization.md (#8654)
+    feat(ui5-checkbox): update focus handling (#8553)
     
-    Documentation review.
+    Adjusted ui5-checkbox focus display rules. On desktop, focus outline is
+    always visible. For mobile, focus outline only appears with an external
+    keyboard, it remains hidden for touch focus.
+    
+    Related to: #8320

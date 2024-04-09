@@ -87,13 +87,6 @@ type TabContainerMoveEventDetail = {
  */
 declare class TabContainer extends UI5Element {
     /**
-     * Defines whether the tabs are in a fixed state that is not
-     * expandable/collapsible by user interaction.
-     * @default false
-     * @public
-     */
-    fixed: boolean;
-    /**
      * Defines whether the tab content is collapsed.
      * @default false
      * @public
@@ -222,8 +215,6 @@ declare class TabContainer extends UI5Element {
     get allItems(): Array<Tab | TabSeparator>;
     _flatten(items: Array<Tab | TabSeparator>): (TabSeparator | Tab)[];
     _onItemSelect(selectedTabId: string): void;
-    toggleAnimated(selectedTab: Tab, previousTab: Tab): Promise<void>;
-    toggle(selectedTab: Tab, previousTab: Tab): void;
     /**
      * Fires the `tab-select` event and changes the internal reference for the currently selected tab.
      * If the event is prevented, the current tab is not changed.
@@ -311,7 +302,6 @@ declare class TabContainer extends UI5Element {
     get popoverCancelButtonText(): string;
     get accInvisibleText(): string;
     get tablistAriaDescribedById(): string | undefined;
-    get shouldAnimate(): boolean;
     static onDefine(): Promise<void>;
 }
 export default TabContainer;

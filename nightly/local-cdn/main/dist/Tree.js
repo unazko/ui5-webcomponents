@@ -14,7 +14,7 @@ import { getEffectiveAriaLabelText } from "@ui5/webcomponents-base/dist/util/Ari
 import TreeItem from "./TreeItem.js";
 import TreeItemCustom from "./TreeItemCustom.js";
 import TreeList from "./TreeList.js";
-import ListMode from "./types/ListMode.js";
+import ListSelectionMode from "./types/ListSelectionMode.js";
 // Template
 import TreeTemplate from "./generated/templates/TreeTemplate.lit.js";
 // Styles
@@ -48,7 +48,7 @@ import TreeCss from "./generated/themes/Tree.css.js";
  * - [Left] - Goes up the tree and collapses the tree nodes.
  *
  * The user can use the following keyboard shortcuts to perform selection,
- * when the `mode` property is in use:
+ * when the `selectionMode` property is in use:
  *
  * - [Space] - Selects the currently focused item upon keyup.
  * - [Enter]  - Selects the currently focused item upon keydown.
@@ -196,8 +196,8 @@ let Tree = class Tree extends UI5Element {
     }
 };
 __decorate([
-    property({ type: ListMode, defaultValue: ListMode.None })
-], Tree.prototype, "mode", void 0);
+    property({ type: ListSelectionMode, defaultValue: ListSelectionMode.None })
+], Tree.prototype, "selectionMode", void 0);
 __decorate([
     property()
 ], Tree.prototype, "noDataText", void 0);
@@ -302,7 +302,7 @@ Tree = __decorate([
      * Fired when the Delete button of any tree item is pressed.
      *
      * **Note:** A Delete button is displayed on each item,
-     * when the component `mode` property is set to `Delete`.
+     * when the component `selectionMode` property is set to `Delete`.
      * @param {HTMLElement} item the deleted item.
      * @public
      */
@@ -328,7 +328,7 @@ Tree = __decorate([
     })
     /**
      * Fired when selection is changed by user interaction
-     * in `SingleSelect`, `SingleSelectBegin`, `SingleSelectEnd` and `MultiSelect` modes.
+     * in `Single`, `SingleStart`, `SingleEnd` and `Multiple` modes.
      * @param {Array} selectedItems An array of the selected items.
      * @param {Array} previouslySelectedItems An array of the previously selected items.
      * @param {HTMLElement} targetItem The item triggering the event.

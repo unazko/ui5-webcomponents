@@ -13,7 +13,7 @@ import event from "@ui5/webcomponents-base/dist/decorators/event.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import { getI18nBundle } from "@ui5/webcomponents-base/dist/i18nBundle.js";
 import { isSpace, isEnter } from "@ui5/webcomponents-base/dist/Keys.js";
-import { isFirefox } from "@ui5/webcomponents-base/dist/Device.js";
+import { isFirefox, isDesktop, } from "@ui5/webcomponents-base/dist/Device.js";
 import Integer from "@ui5/webcomponents-base/dist/types/Integer.js";
 import CardHeaderTemplate from "./generated/templates/CardHeaderTemplate.lit.js";
 import { AVATAR_TOOLTIP, ARIA_ROLEDESCRIPTION_CARD_HEADER, ARIA_ROLEDESCRIPTION_INTERACTIVE_CARD_HEADER, } from "./generated/i18n/i18n-defaults.js";
@@ -43,6 +43,11 @@ import cardHeaderCss from "./generated/themes/CardHeader.css.js";
  * @csspart additional-text - Used to style the additional text of the CardHeader
  */
 let CardHeader = CardHeader_1 = class CardHeader extends UI5Element {
+    onEnterDOM() {
+        if (isDesktop()) {
+            this.setAttribute("desktop", "");
+        }
+    }
     get classes() {
         return {
             root: {

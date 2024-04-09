@@ -344,7 +344,7 @@ declare class MultiComboBox extends UI5Element {
     inputFocusOut(e: FocusEvent): void;
     get editable(): boolean;
     get _isFocusInside(): boolean;
-    get selectedItemsListMode(): "None" | "MultiSelect";
+    get selectedItemsListMode(): "None" | "Multiple";
     get _listItemsType(): "Inactive" | "Active";
     get hasValueState(): boolean;
     get hasValueStateMessage(): boolean;

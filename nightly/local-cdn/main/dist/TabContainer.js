@@ -16,9 +16,8 @@ import { renderFinished } from "@ui5/webcomponents-base/dist/Render.js";
 import slideDown from "@ui5/webcomponents-base/dist/animations/slideDown.js";
 import slideUp from "@ui5/webcomponents-base/dist/animations/slideUp.js";
 import Integer from "@ui5/webcomponents-base/dist/types/Integer.js";
-import AnimationMode from "@ui5/webcomponents-base/dist/types/AnimationMode.js";
-import { getAnimationMode } from "@ui5/webcomponents-base/dist/config/AnimationMode.js";
 import ItemNavigation from "@ui5/webcomponents-base/dist/delegate/ItemNavigation.js";
+import { isDesktop, } from "@ui5/webcomponents-base/dist/Device.js";
 import { isSpace, isEnter, isDown, isRight, isLeft, isUp, } from "@ui5/webcomponents-base/dist/Keys.js";
 import MediaRange from "@ui5/webcomponents-base/dist/MediaRange.js";
 import { getI18nBundle } from "@ui5/webcomponents-base/dist/i18nBundle.js";
@@ -152,6 +151,9 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         ResizeHandler.register(this._getHeader(), this._handleResizeBound);
         DragRegistry.subscribe(this);
         this._setDraggedElement = DragRegistry.addSelfManagedArea(this);
+        if (isDesktop()) {
+            this.setAttribute("desktop", "");
+        }
     }
     onExitDOM() {
         ResizeHandler.deregister(this._getHeader(), this._handleResizeBound);
@@ -422,7 +424,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         this._closePopover();
         await renderFinished();
         const selectedTopLevel = this._getRootTab(this._selectedTab);
-        selectedTopLevel.getTabInStripDomRef().focus();
+        selectedTopLevel.getDomRefInStrip().focus();
     }
     /**
      * Returns all slotted tabs and their subTabs in a flattened array.
@@ -444,7 +446,6 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         return result;
     }
     _onItemSelect(selectedTabId) {
-        const previousTab = this._selectedTab;
         const selectedTabIndex = this._itemsFlat.findIndex(item => item.__id === selectedTabId);
         const selectedTab = this._itemsFlat[selectedTabIndex];
         const selectionSuccessful = this.selectTab(selectedTab, selectedTabIndex);
@@ -461,41 +462,6 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
                 }
             }
         });
-        if (this.fixed) {
-            return;
-        }
-        if (!this.shouldAnimate) {
-            this.toggle(selectedTab, previousTab);
-        }
-        else {
-            this.toggleAnimated(selectedTab, previousTab);
-        }
-    }
-    async toggleAnimated(selectedTab, previousTab) {
-        const content = this.shadowRoot.querySelector(".ui5-tc__content");
-        let animationPromise = null;
-        this._animationRunning = true;
-        if (selectedTab === previousTab) {
-            // click on already selected tab - animate both directions
-            this.collapsed = !this.collapsed;
-            animationPromise = this.collapsed ? this.slideContentUp(content) : this.slideContentDown(content);
-        }
-        else {
-            // click on new tab - animate if the content is currently collapsed
-            animationPromise = this.collapsed ? this.slideContentDown(content) : Promise.resolve();
-            this.collapsed = false;
-        }
-        await animationPromise;
-        this._contentCollapsed = this.collapsed;
-        this._animationRunning = false;
-    }
-    toggle(selectedTab, previousTab) {
-        if (selectedTab === previousTab) {
-            this.collapsed = !this.collapsed;
-        }
-        else {
-            this.collapsed = false;
-        }
     }
     /**
      * Fires the `tab-select` event and changes the internal reference for the currently selected tab.
@@ -570,7 +536,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         if (!this._selectedTab) {
             return;
         }
-        const itemsDomRefs = this.items.map(item => item.getTabInStripDomRef());
+        const itemsDomRefs = this.items.map(item => item.getDomRefInStrip());
         // make sure the overflows are hidden
         this._getStartOverflow().setAttribute("hidden", "");
         this._getEndOverflow().setAttribute("hidden", "");
@@ -608,7 +574,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         // show end overflow
         this._getEndOverflow().removeAttribute("hidden");
         const selectedTab = this._getRootTab(this._selectedTab);
-        const selectedTabDomRef = selectedTab.getTabInStripDomRef();
+        const selectedTabDomRef = selectedTab.getDomRefInStrip();
         const containerWidth = this._getTabStrip().offsetWidth;
         const selectedItemIndexAndWidth = this._getSelectedItemIndexAndWidth(itemsDomRefs, selectedTabDomRef);
         const lastVisibleTabIndex = this._findLastVisibleItem(itemsDomRefs, containerWidth, selectedItemIndexAndWidth.width);
@@ -621,7 +587,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
     _updateStartAndEndOverflow(itemsDomRefs) {
         let containerWidth = this._getTabStrip().offsetWidth;
         const selectedTab = this._getRootTab(this._selectedTab);
-        const selectedTabDomRef = selectedTab.getTabInStripDomRef();
+        const selectedTabDomRef = selectedTab.getDomRefInStrip();
         const selectedItemIndexAndWidth = this._getSelectedItemIndexAndWidth(itemsDomRefs, selectedTabDomRef);
         const hasStartOverflow = this._hasStartOverflow(containerWidth, itemsDomRefs, selectedItemIndexAndWidth);
         const hasEndOverflow = this._hasEndOverflow(containerWidth, itemsDomRefs, selectedItemIndexAndWidth);
@@ -772,7 +738,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         let startOverflowItemsCount = 0;
         let endOverflowItemsCount = 0;
         this._getTabs()
-            .map(tab => tab.getTabInStripDomRef())
+            .map(tab => tab.getDomRefInStrip())
             .forEach(tab => {
             if (tab.hasAttribute("start-overflow")) {
                 startOverflowItemsCount++;
@@ -793,7 +759,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
             focusableRefs.push(this.startOverflowButton[0] || this._getStartOverflowBtnDOM());
         }
         this._getTabs().forEach(tab => {
-            const ref = tab.getTabInStripDomRef();
+            const ref = tab.getDomRefInStrip();
             const focusable = ref && !ref.hasAttribute("hidden");
             if (focusable) {
                 focusableRefs.push(tab);
@@ -822,13 +788,13 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
     _getPopoverItemsFor(targetOwner) {
         if (targetOwner === "start-overflow") {
             return this.items.filter(item => {
-                const stripRef = item.getTabInStripDomRef();
+                const stripRef = item.getDomRefInStrip();
                 return stripRef && stripRef.hasAttribute("start-overflow");
             });
         }
         if (targetOwner === "end-overflow") {
             return this.items.filter(item => {
-                const stripRef = item.getTabInStripDomRef();
+                const stripRef = item.getDomRefInStrip();
                 return stripRef && stripRef.hasAttribute("end-overflow");
             });
         }
@@ -959,16 +925,10 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
     get tablistAriaDescribedById() {
         return this.hasItems ? `${this._id}-invisibleText` : undefined;
     }
-    get shouldAnimate() {
-        return getAnimationMode() !== AnimationMode.None;
-    }
     static async onDefine() {
         TabContainer_1.i18nBundle = await getI18nBundle("@ui5/webcomponents");
     }
 };
-__decorate([
-    property({ type: Boolean })
-], TabContainer.prototype, "fixed", void 0);
 __decorate([
     property({ type: Boolean })
 ], TabContainer.prototype, "collapsed", void 0);

@@ -69,6 +69,7 @@ declare class CardHeader extends UI5Element {
     */
     action: Array<HTMLElement>;
     static i18nBundle: I18nBundle;
+    onEnterDOM(): void;
     get classes(): {
         root: {
             "ui5-card-header": boolean;

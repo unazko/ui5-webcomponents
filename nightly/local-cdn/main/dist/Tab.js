@@ -51,10 +51,10 @@ const DESIGN_DESCRIPTIONS = {
  */
 let Tab = Tab_1 = class Tab extends UI5Element {
     set forcedTabIndex(val) {
-        this.getTabInStripDomRef().setAttribute("tabindex", val);
+        this.getDomRefInStrip().setAttribute("tabindex", val);
     }
     get forcedTabIndex() {
-        return this.getTabInStripDomRef().getAttribute("tabindex");
+        return this.getDomRefInStrip().getAttribute("tabindex");
     }
     get displayText() {
         let text = this.text;
@@ -110,17 +110,14 @@ let Tab = Tab_1 = class Tab extends UI5Element {
     /**
      * Returns the DOM reference of the tab that is placed in the header.
      *
-     * **Note:** Tabs, placed in the `items` slot of other tabs are not shown in the header. Calling this method on such tabs will return `null`.
+     * **Note:** Tabs, placed in the `items` slot of other tabs are not shown in the header. Calling this method on such tabs will return `undefined`.
      *
      * **Note:** If you need a DOM ref to the tab content please use the `getDomRef` method.
      * @public
      * @since 1.0.0-rc.16
      */
-    getTabInStripDomRef() {
-        if (this._getElementInStrip) {
-            return this._getElementInStrip();
-        }
-        return undefined;
+    getDomRefInStrip() {
+        return this._getElementInStrip?.();
     }
     getFocusDomRef() {
         let focusedDomRef = super.getFocusDomRef();

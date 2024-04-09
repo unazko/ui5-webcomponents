@@ -161,12 +161,6 @@ let UploadCollectionItem = UploadCollectionItem_1 = class UploadCollectionItem e
             },
         };
     }
-    /**
-     * @override
-     */
-    get renderUploadCollectionDeleteButton() {
-        return !this.hideDeleteButton;
-    }
     get _fileNameWithoutExtension() {
         return this.fileName.substring(0, this.fileName.length - this._fileExtension.length);
     }

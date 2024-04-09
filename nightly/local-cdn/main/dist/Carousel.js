@@ -108,6 +108,9 @@ let Carousel = Carousel_1 = class Carousel extends UI5Element {
     }
     onEnterDOM() {
         ResizeHandler.register(this, this._onResizeBound);
+        if (isDesktop()) {
+            this.setAttribute("desktop", "");
+        }
     }
     onExitDOM() {
         ResizeHandler.deregister(this, this._onResizeBound);
