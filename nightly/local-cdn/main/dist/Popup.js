@@ -261,7 +261,7 @@ let Popup = Popup_1 = class Popup extends UI5Element {
         await renderFinished();
         if (this.isModal && !this.shouldHideBackdrop) {
             // create static area item ref for block layer
-            this._getBlockingLayer.showPopover();
+            this._getBlockingLayer?.showPopover();
             this._blockLayerHidden = false;
             Popup_1.blockPageScrolling(this);
         }
@@ -303,7 +303,7 @@ let Popup = Popup_1 = class Popup extends UI5Element {
         }
         if (this.isModal) {
             this._blockLayerHidden = true;
-            this._getBlockingLayer.hidePopover();
+            this._getBlockingLayer?.hidePopover();
             Popup_1.unblockPageScrolling(this);
         }
         this.hide();

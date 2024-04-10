@@ -1,7 +1,7 @@
-commit fb413ecc845b8a32a0a3a57d7ec4edaefd68801e
-Author: petyabegovska <pbegovska@gmail.com>
-Date:   Wed Apr 10 10:44:16 2024 +0300
+commit 1a7331dbc1ad44138ae966c310043bdce3e29cc3
+Author: Boyan Rakilovski <boyan.rakilovski@sap.com>
+Date:   Wed Apr 10 14:55:48 2024 +0300
 
-    docs: update README.md (#8710)
+    fix(ui5-menu): adjust active menu item text color (#8699)
     
-    Fix link to point to the new documentation
+    Related to: #8681

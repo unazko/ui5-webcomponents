@@ -380,7 +380,7 @@ let Menu = Menu_1 = class Menu extends UI5Element {
     }
     _afterPopoverOpen() {
         this.open = true;
-        this.fireEvent("after-open", {}, false, false);
+        this.fireEvent("open", {}, false, false);
     }
     _beforePopoverClose(e) {
         const prevented = !this.fireEvent("before-close", { escPressed: e.detail.escPressed }, true, false);
@@ -396,7 +396,7 @@ let Menu = Menu_1 = class Menu extends UI5Element {
     }
     _afterPopoverClose() {
         this.open = false;
-        this.fireEvent("after-close", {}, false, false);
+        this.fireEvent("close", {}, false, false);
     }
 };
 __decorate([
@@ -507,7 +507,7 @@ Menu = Menu_1 = __decorate([
      * @since 1.10.0
      */
     ,
-    event("after-open")
+    event("open")
     /**
      * Fired before the menu is closed. This event can be cancelled, which will prevent the menu from closing. **This event does not bubble.**
      * @public
@@ -532,7 +532,7 @@ Menu = Menu_1 = __decorate([
      * @since 1.10.0
      */
     ,
-    event("after-close")
+    event("close")
     /**
      * Fired when a menu item receives focus.
      *
