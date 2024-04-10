@@ -17,5 +17,6 @@ declare const customElement: (tagNameOrComponentSettings?: string | {
     languageAware?: boolean;
     themeAware?: boolean;
     fastNavigation?: boolean;
+    shadowRootOptions?: Partial<ShadowRootInit>;
 }) => ClassDecorator;
 export default customElement;

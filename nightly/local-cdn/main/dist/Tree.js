@@ -8,9 +8,14 @@ import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
+import DragRegistry from "@ui5/webcomponents-base/dist/util/dragAndDrop/DragRegistry.js";
+import findClosestPosition from "@ui5/webcomponents-base/dist/util/dragAndDrop/findClosestPosition.js";
+import Orientation from "@ui5/webcomponents-base/dist/types/Orientation.js";
+import MovePlacement from "@ui5/webcomponents-base/dist/types/MovePlacement.js";
 import event from "@ui5/webcomponents-base/dist/decorators/event.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import { getEffectiveAriaLabelText } from "@ui5/webcomponents-base/dist/util/AriaLabelHelper.js";
+import DropIndicator from "./DropIndicator.js";
 import TreeItem from "./TreeItem.js";
 import TreeItemCustom from "./TreeItemCustom.js";
 import TreeList from "./TreeList.js";
@@ -63,6 +68,12 @@ import TreeCss from "./generated/themes/Tree.css.js";
  * @since 1.0.0-rc.8
  */
 let Tree = class Tree extends UI5Element {
+    onEnterDOM() {
+        DragRegistry.subscribe(this);
+    }
+    onExitDOM() {
+        DragRegistry.unsubscribe(this);
+    }
     onBeforeRendering() {
         this._prepareTreeItems();
     }
@@ -70,6 +81,9 @@ let Tree = class Tree extends UI5Element {
         // Note: this is a workaround for the problem that the list cannot invalidate itself when its only physical child is a slot (and the list items are inside the slot)
         // This code should be removed once a framework-level fix is implemented
         this.shadowRoot.querySelector("[ui5-tree-list]").onBeforeRendering();
+    }
+    get dropIndicatorDOM() {
+        return this.shadowRoot.querySelector("[ui5-drop-indicator]");
     }
     get list() {
         return this.getDomRef();
@@ -82,6 +96,75 @@ let Tree = class Tree extends UI5Element {
     }
     get _hasHeader() {
         return !!this.header.length;
+    }
+    _ondragenter(e) {
+        e.preventDefault();
+    }
+    _ondragleave(e) {
+        if (e.relatedTarget instanceof Node && this.shadowRoot.contains(e.relatedTarget)) {
+            return;
+        }
+        this.dropIndicatorDOM.targetReference = null;
+    }
+    _ondragover(e) {
+        const draggedElement = DragRegistry.getDraggedElement();
+        const allLiNodesTraversed = []; // use the only <li> nodes to determine positioning
+        if (!(e.target instanceof HTMLElement) || !draggedElement) {
+            return;
+        }
+        this.walk(item => {
+            allLiNodesTraversed.push(item.shadowRoot.querySelector("li"));
+        });
+        const closestPosition = findClosestPosition(allLiNodesTraversed, e.clientY, Orientation.Vertical);
+        if (!closestPosition) {
+            this.dropIndicatorDOM.targetReference = null;
+            return;
+        }
+        let placements = closestPosition.placements;
+        closestPosition.element = closestPosition.element.getRootNode().host;
+        if (draggedElement.contains(closestPosition.element)) {
+            return;
+        }
+        if (closestPosition.element === draggedElement) {
+            placements = placements.filter(placement => placement !== MovePlacement.On);
+        }
+        const placementAccepted = placements.some(placement => {
+            const closestElement = closestPosition.element;
+            const beforeItemMovePrevented = !this.fireEvent("move-over", {
+                source: {
+                    element: draggedElement,
+                },
+                destination: {
+                    element: closestElement,
+                    placement,
+                },
+            }, true);
+            if (beforeItemMovePrevented) {
+                e.preventDefault();
+                this.dropIndicatorDOM.targetReference = closestElement;
+                this.dropIndicatorDOM.placement = placement;
+                return true;
+            }
+            return false;
+        });
+        if (!placementAccepted) {
+            this.dropIndicatorDOM.targetReference = null;
+        }
+    }
+    _ondrop(e) {
+        e.preventDefault();
+        const draggedElement = DragRegistry.getDraggedElement();
+        this.fireEvent("move", {
+            source: {
+                element: draggedElement,
+            },
+            destination: {
+                element: this.dropIndicatorDOM.targetReference,
+                placement: this.dropIndicatorDOM.placement,
+            },
+        });
+        draggedElement.focus();
+        this.dropIndicatorDOM.targetReference = null;
     }
     _onListItemStepIn(e) {
         const treeItem = e.detail.item;
@@ -232,6 +315,7 @@ Tree = __decorate([
             TreeList,
             TreeItem,
             TreeItemCustom,
+            DropIndicator,
         ],
     })
     /**

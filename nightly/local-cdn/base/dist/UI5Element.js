@@ -81,7 +81,8 @@ class UI5Element extends HTMLElement {
         this._state = { ...ctor.getMetadata().getInitialState() };
         this._upgradeAllProperties();
         if (ctor._needsShadowDOM()) {
-            this.attachShadow({ mode: "open" });
+            const defaultOptions = { mode: "open" };
+            this.attachShadow({ ...defaultOptions, ...ctor.getMetadata().getShadowRootOptions() });
         }
     }
     /**

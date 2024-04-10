@@ -1,7 +1,7 @@
-commit 1a7331dbc1ad44138ae966c310043bdce3e29cc3
-Author: Boyan Rakilovski <boyan.rakilovski@sap.com>
-Date:   Wed Apr 10 14:55:48 2024 +0300
+commit 4514f57b513d74b108800576c5a893083e8f594d
+Author: Plamen Ivanov <plamen.ivanov01@sap.com>
+Date:   Wed Apr 10 18:19:44 2024 +0300
 
-    fix(ui5-menu): adjust active menu item text color (#8699)
+    feat(ui5-tree): enable drag and drop (#8477)
     
-    Related to: #8681
+    Fixes: #7562

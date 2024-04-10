@@ -1,9 +1,20 @@
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
+import MovePlacement from "@ui5/webcomponents-base/dist/types/MovePlacement.js";
+import DropIndicator from "./DropIndicator.js";
 import type TreeItemBase from "./TreeItemBase.js";
 import TreeList from "./TreeList.js";
 import ListSelectionMode from "./types/ListSelectionMode.js";
 import type { TreeItemBaseToggleEventDetail, TreeItemBaseStepInEventDetail, TreeItemBaseStepOutEventDetail } from "./TreeItemBase.js";
 import type { ListItemClickEventDetail, ListItemDeleteEventDetail, ListItemFocusEventDetail, ListSelectionChangeEventDetail } from "./List.js";
+type TreeMoveEventDetail = {
+    source: {
+        element: HTMLElement;
+    };
+    destination: {
+        element: HTMLElement;
+        placement: `${MovePlacement}`;
+    };
+};
 type TreeItemEventDetail = {
     item: TreeItemBase;
 };
@@ -126,12 +137,19 @@ declare class Tree extends UI5Element {
      * @public
      */
     header: Array<HTMLElement>;
+    onEnterDOM(): void;
+    onExitDOM(): void;
     onBeforeRendering(): void;
     onAfterRendering(): void;
+    get dropIndicatorDOM(): DropIndicator | null;
     get list(): TreeList;
     get _role(): string;
     get _label(): string | undefined;
     get _hasHeader(): boolean;
+    _ondragenter(e: DragEvent): void;
+    _ondragleave(e: DragEvent): void;
+    _ondragover(e: DragEvent): void;
+    _ondrop(e: DragEvent): void;
     _onListItemStepIn(e: CustomEvent<TreeItemBaseStepInEventDetail>): void;
     _onListItemStepOut(e: CustomEvent<TreeItemBaseStepOutEventDetail>): void;
     _onListItemToggle(e: CustomEvent<TreeItemBaseToggleEventDetail>): void;
@@ -169,4 +187,4 @@ declare class Tree extends UI5Element {
     _isInstanceOfTreeItemBase(object: any): object is TreeItemBase;
 }
 export default Tree;
-export type { TreeItemToggleEventDetail, TreeItemMouseoverEventDetail, TreeItemMouseoutEventDetail, TreeItemClickEventDetail, TreeItemDeleteEventDetail, TreeItemFocusEventDetail, TreeSelectionChangeEventDetail, WalkCallback, };
+export type { TreeMoveEventDetail, TreeItemToggleEventDetail, TreeItemMouseoverEventDetail, TreeItemMouseoutEventDetail, TreeItemClickEventDetail, TreeItemDeleteEventDetail, TreeItemFocusEventDetail, TreeSelectionChangeEventDetail, WalkCallback, };
