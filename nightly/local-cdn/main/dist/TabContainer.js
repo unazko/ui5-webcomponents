@@ -260,6 +260,9 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         }
     }
     _onHeaderDrop(e) {
+        if (e.target === this._getStartOverflowBtnDOM() || e.target === this._getEndOverflowBtnDOM()) {
+            return;
+        }
         e.preventDefault();
         const draggedElement = DragRegistry.getDraggedElement();
         this.fireEvent("move", {
@@ -285,6 +288,9 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         const draggedElement = DragRegistry.getDraggedElement();
         const dropTarget = destination.element.realTabReference;
         if (destination.placement === MovePlacement.On && (dropTarget.isSeparator || draggedElement === dropTarget)) {
+            return;
+        }
+        if (draggedElement !== dropTarget && draggedElement.contains(dropTarget)) {
             return;
         }
         const placementAccepted = !this.fireEvent("move-over", {

@@ -24,7 +24,7 @@ class SideNavigationItemBase extends UI5Element {
         }
     }
     get _tooltip() {
-        return this.title || undefined;
+        return this.tooltip || undefined;
     }
     get classesArray() {
         const classes = [];
@@ -69,7 +69,7 @@ __decorate([
 ], SideNavigationItemBase.prototype, "disabled", void 0);
 __decorate([
     property()
-], SideNavigationItemBase.prototype, "title", void 0);
+], SideNavigationItemBase.prototype, "tooltip", void 0);
 __decorate([
     property({ defaultValue: "-1", noAttribute: true })
 ], SideNavigationItemBase.prototype, "forcedTabIndex", void 0);

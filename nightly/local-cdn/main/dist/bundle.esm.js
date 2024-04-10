@@ -127,6 +127,7 @@ import "./MessageStrip.js";
 import "./MultiComboBox.js";
 import "./ProgressIndicator.js";
 import "./RatingIndicator.js";
+import "./Text.js";
 import "./TabContainer.js";
 import "./Tab.js";
 import "./TabSeparator.js";

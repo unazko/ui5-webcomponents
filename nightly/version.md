@@ -1,11 +1,7 @@
-commit ce2829619eceb1dca26ca17b2b6d0ab253caf076
-Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
-Date:   Mon Apr 8 20:37:18 2024 +0300
+commit fb413ecc845b8a32a0a3a57d7ec4edaefd68801e
+Author: petyabegovska <pbegovska@gmail.com>
+Date:   Wed Apr 10 10:44:16 2024 +0300
 
-    feat(ui5-checkbox): update focus handling (#8553)
+    docs: update README.md (#8710)
     
-    Adjusted ui5-checkbox focus display rules. On desktop, focus outline is
-    always visible. For mobile, focus outline only appears with an external
-    keyboard, it remains hidden for touch focus.
-    
-    Related to: #8320
+    Fix link to point to the new documentation
