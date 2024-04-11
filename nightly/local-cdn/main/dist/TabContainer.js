@@ -1022,6 +1022,7 @@ TabContainer = TabContainer_1 = __decorate([
      * @param {Tab} tab The selected `tab`.
      * @param {Integer} tabIndex The selected `tab` index in the flattened array of all tabs and their subTabs, provided by the `allItems` getter.
      * @public
+     * @since 2.0.0
      * @allowPreventDefault
      */
     ,
@@ -1035,6 +1036,51 @@ TabContainer = TabContainer_1 = __decorate([
              * @public
              */
             tabIndex: { type: Number },
+        },
+    })
+    /**
+     * Fired when element is being moved over the tab container.
+     *
+     * If the new position is valid, prevent the default action of the event using `preventDefault()`.
+     * @param {object} source Contains information about the moved element under `element` property.
+     * @param {object} destination Contains information about the destination of the moved element. Has `element` and `placement` properties.
+     * @public
+     * @since 2.0.0
+     * @allowPreventDefault
+     */
+    ,
+    event("move-over", {
+        detail: {
+            /**
+             * @public
+             */
+            source: { type: Object },
+            /**
+             * @public
+             */
+            destination: { type: Object },
+        },
+    })
+    /**
+     * Fired when element is moved to the tab container.
+     *
+     * **Note:** `move` event is fired only if there was a preceding `move-over` with prevented default action.
+     * @param {object} source Contains information about the moved element under `element` property.
+     * @param {object} destination Contains information about the destination of the moved element. Has `element` and `placement` properties.
+     * @public
+     * @allowPreventDefault
+     */
+    ,
+    event("move", {
+        detail: {
+            /**
+             * @public
+             */
+            source: { type: Object },
+            /**
+             * @public
+             */
+            destination: { type: Object },
         },
     })
 ], TabContainer);
