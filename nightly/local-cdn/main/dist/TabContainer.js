@@ -137,7 +137,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
             const focusStart = this._getRootTab(this._selectedTab);
             this._itemNavigation.setCurrentItem(focusStart);
         }
-        if (this.responsivePopover?.opened) {
+        if (this.responsivePopover?.open) {
             const popoverItems = this._getPopoverItemsFor(this._getPopoverOwner(this.responsivePopover._opener));
             if (popoverItems.length) {
                 this._setPopoverItems(popoverItems);
@@ -162,7 +162,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         this._setDraggedElement = undefined;
     }
     _handleResize() {
-        if (this.responsivePopover && this.responsivePopover.opened) {
+        if (this.responsivePopover && this.responsivePopover.open) {
             this._closePopover();
         }
         // invalidate
@@ -515,7 +515,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
                     [getScopedVarName("--_ui5-tab-extra-indent")]: extraIndent ? 1 : null,
                 },
             });
-            if (!item.isSeparator) {
+            if (item.items) {
                 this._setIndentLevels(item.items, level + 1, extraIndent);
             }
         });
@@ -1095,10 +1095,10 @@ const getTabInStrip = (el) => {
     return false;
 };
 const walk = (items, callback) => {
-    [...items].forEach(tab => {
-        callback(tab);
-        if (tab.hasAttribute("ui5-tab")) {
-            walk(tab.items, callback);
+    [...items].forEach(item => {
+        callback(item);
+        if (item.hasAttribute("ui5-tab") && item.items) {
+            walk(item.items, callback);
         }
     });
 };

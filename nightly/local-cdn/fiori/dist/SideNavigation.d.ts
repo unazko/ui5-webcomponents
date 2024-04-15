@@ -79,7 +79,7 @@ declare class SideNavigation extends UI5Element {
      *
      * @public
      */
-    items: Array<SideNavigationItem | SideNavigationGroup>;
+    items: Array<SideNavigationItemBase>;
     /**
      * Defines the fixed items at the bottom of the `ui5-side-navigation`. Use the `ui5-side-navigation-item` component
      * for the fixed items, and optionally the `ui5-side-navigation-sub-item` component to provide second-level items inside them.
@@ -88,7 +88,7 @@ declare class SideNavigation extends UI5Element {
      *
      * @public
      */
-    fixedItems: Array<SideNavigationItem | SideNavigationGroup>;
+    fixedItems: Array<SideNavigationItemBase>;
     /**
      * Defines the header of the `ui5-side-navigation`.
      *

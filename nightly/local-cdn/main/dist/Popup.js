@@ -113,11 +113,6 @@ let Popup = Popup_1 = class Popup extends UI5Element {
     get open() {
         return this._opened;
     }
-    // for compatibility,
-    // it will be removed with another change
-    get opened() {
-        return this._opened;
-    }
     async openPopup() {
         await this._open(false);
     }
@@ -264,9 +259,6 @@ let Popup = Popup_1 = class Popup extends UI5Element {
     isFocusWithin() {
         return isFocusedElementWithinNode(this._root);
     }
-    get _getBlockingLayer() {
-        return this.shadowRoot.querySelector(".ui5-block-layer");
-    }
     /**
      * Shows the block layer (for modal popups only) and sets the correct z-index for the purpose of popup stacking
      * @protected
@@ -279,17 +271,8 @@ let Popup = Popup_1 = class Popup extends UI5Element {
         if (prevented || this._isOpened) {
             return;
         }
-        let isRenderFinished = false;
         this._isOpened = true;
         if (this.isModal && !this.shouldHideBackdrop) {
-            if (!this._getBlockingLayer) {
-                // Await render before trying to access the blocking layer
-                await renderFinished();
-                isRenderFinished = true;
-            }
-            // create static area item ref for block layer
-            this._getBlockingLayer?.showPopover();
-            this._blockLayerHidden = false;
             Popup_1.blockPageScrolling(this);
         }
         this._focusedElementBeforeOpen = getFocusedElement();
@@ -301,11 +284,9 @@ let Popup = Popup_1 = class Popup extends UI5Element {
         this.open = true;
         // initial focus, if focused element is statically created
         await this.applyInitialFocus(preventInitialFocus);
-        if (!isRenderFinished) {
-            await renderFinished();
-            // initial focus, if focused element is dynamically created
-            await this.applyInitialFocus(preventInitialFocus);
-        }
+        await renderFinished();
+        // initial focus, if focused element is dynamically created
+        await this.applyInitialFocus(preventInitialFocus);
         this.fireEvent("after-open", {}, false, false);
     }
     _updateMediaRange() {
@@ -332,8 +313,6 @@ let Popup = Popup_1 = class Popup extends UI5Element {
         }
         this._isOpened = false;
         if (this.isModal) {
-            this._blockLayerHidden = true;
-            this._getBlockingLayer?.hidePopover();
             Popup_1.unblockPageScrolling(this);
         }
         this.hide();
@@ -439,9 +418,6 @@ __decorate([
 __decorate([
     property({ type: Boolean })
 ], Popup.prototype, "_disableInitialFocus", void 0);
-__decorate([
-    property({ type: Boolean })
-], Popup.prototype, "_blockLayerHidden", void 0);
 __decorate([
     property({ type: Boolean, noAttribute: true })
 ], Popup.prototype, "isTopModalPopup", void 0);

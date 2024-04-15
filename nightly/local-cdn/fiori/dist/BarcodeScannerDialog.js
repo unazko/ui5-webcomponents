@@ -126,7 +126,7 @@ let BarcodeScannerDialog = BarcodeScannerDialog_1 = class BarcodeScannerDialog e
         this.open = true;
     }
     _closeDialog() {
-        if (this.dialog && this.dialog.opened) {
+        if (this.dialog && this.dialog.open) {
             this.dialog.close();
             this.open = false;
         }
