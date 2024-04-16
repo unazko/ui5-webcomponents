@@ -1,7 +1,5 @@
-commit a5574d6ddd6a218f4fe4a686836d33797b790a76
-Author: TeodorTaushanov <teodor.taushanov@sap.com>
-Date:   Mon Apr 15 11:34:27 2024 +0300
+commit ce55755c05a5588759d751da9749dbde0bbba722
+Author: Lukas Harbarth <lukas.harbarth@sap.com>
+Date:   Tue Apr 16 08:04:50 2024 +0200
 
-    refactor(ui5-popup): simplify block layer logic (#8748)
-    
-    * refactor(ui5-popup): simplify block layer logic
+    fix(ui5-menu-item): apply scoping to internal `Icon` (#8751)

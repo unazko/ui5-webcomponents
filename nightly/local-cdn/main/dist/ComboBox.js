@@ -375,7 +375,6 @@ let ComboBox = ComboBox_1 = class ComboBox extends UI5Element {
             });
         }
         this.fireEvent("input");
-        this._fireChangeEvent();
     }
     _handleArrowDown(e, indexOfItem) {
         const isOpen = this.open;
