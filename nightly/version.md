@@ -1,5 +1,11 @@
-commit ce55755c05a5588759d751da9749dbde0bbba722
-Author: Lukas Harbarth <lukas.harbarth@sap.com>
-Date:   Tue Apr 16 08:04:50 2024 +0200
+commit db37cf81bd1951ff280b6f682fd5784877cae5ca
+Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
+Date:   Tue Apr 16 15:25:16 2024 +0300
 
-    fix(ui5-menu-item): apply scoping to internal `Icon` (#8751)
+    chore(ui5-icon): update focus handling (#8773)
+    
+    Adjusted `ui5-icon` focus display rules. On desktop, focus outline is
+    always visible. For mobile, focus outline only appears with an external
+    keyboard, it remains hidden for touch focus.
+    
+    Related to: #8320
