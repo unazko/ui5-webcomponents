@@ -31,7 +31,7 @@ import { getEffectiveAriaLabelText } from "@ui5/webcomponents-base/dist/util/Ari
 import { getScopedVarName } from "@ui5/webcomponents-base/dist/CustomElementsScope.js";
 import MultiComboBoxItem from "./MultiComboBoxItem.js";
 import MultiComboBoxGroupItem from "./MultiComboBoxGroupItem.js";
-import GroupHeaderListItem from "./GroupHeaderListItem.js";
+import ListItemGroupHeader from "./ListItemGroupHeader.js";
 import Tokenizer, { ClipboardDataOperation } from "./Tokenizer.js";
 import Token from "./Token.js";
 import Icon from "./Icon.js";
@@ -129,7 +129,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
         }
         const target = e.target;
         const value = target.value;
-        if (!this.allowCustomValues && !this._filterItems(value).length) {
+        if (!this.noValidation && !this._filterItems(value).length) {
             this._dialogInputValueState = ValueState.Error;
         }
         else {
@@ -214,7 +214,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
             }
         }
         this._effectiveValueState = this.valueState;
-        if (!filteredItems.length && value && !this.allowCustomValues) {
+        if (!filteredItems.length && value && !this.noValidation) {
             const newValue = this.valueBeforeAutoComplete || this._inputLastValue;
             input.value = newValue;
             this.value = newValue;
@@ -424,7 +424,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
         if (isAutoCompleted) {
             this.value = this.valueBeforeAutoComplete;
         }
-        if (!this.allowCustomValues || (!this.open && this.allowCustomValues)) {
+        if (!this.noValidation || (!this.open && this.noValidation)) {
             this.value = this._lastValue;
         }
     }
@@ -596,7 +596,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
     }
     async _handleArrowDown() {
         const isOpen = this._getRespPopover().open;
-        const firstListItem = this.list?.items[0];
+        const firstListItem = this.list?.listItems[0];
         if (isOpen) {
             firstListItem && this.list?._itemNavigation.setCurrentItem(firstListItem);
             this.value = this.valueBeforeAutoComplete || this.value;
@@ -809,7 +809,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
             this._previouslySelectedItems = this._getSelectedItems();
         }
         // sync list items and cb items
-        this.syncItems(e.target.items);
+        this.syncItems(e.target.listItems);
         // don't call selection change right after selection as user can cancel it on phone
         if (!isPhone()) {
             changePrevented = this.fireSelectionChange();
@@ -1028,7 +1028,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
                 this._revertSelection();
             }
         }
-        if (!this.allowCustomValues) {
+        if (!this.noValidation) {
             this.value = "";
         }
         this._togglePopover();
@@ -1090,7 +1090,7 @@ let MultiComboBox = MultiComboBox_1 = class MultiComboBox extends UI5Element {
             }
             this._tokenizer.expanded = this.open;
             // remove the value if user focus out the input and focus is not going in the popover
-            if (!isPhone() && !this.allowCustomValues && !focusIsGoingInPopover) {
+            if (!isPhone() && !this.noValidation && !focusIsGoingInPopover) {
                 this.value = "";
             }
         }
@@ -1295,7 +1295,7 @@ __decorate([
 ], MultiComboBox.prototype, "placeholder", void 0);
 __decorate([
     property({ type: Boolean })
-], MultiComboBox.prototype, "allowCustomValues", void 0);
+], MultiComboBox.prototype, "noValidation", void 0);
 __decorate([
     property({ type: Boolean })
 ], MultiComboBox.prototype, "disabled", void 0);
@@ -1403,7 +1403,7 @@ MultiComboBox = MultiComboBox_1 = __decorate([
             Popover,
             List,
             StandardListItem,
-            GroupHeaderListItem,
+            ListItemGroupHeader,
             ToggleButton,
             Button,
             CheckBox,

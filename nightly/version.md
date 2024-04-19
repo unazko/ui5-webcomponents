@@ -1,11 +1,7 @@
-commit db37cf81bd1951ff280b6f682fd5784877cae5ca
-Author: Konstantin Gogov <68374332+kgogov@users.noreply.github.com>
-Date:   Tue Apr 16 15:25:16 2024 +0300
+commit eff5bc46e2c2a8e0ea0490fd77ddbfc8f5a1a55c
+Author: petyabegovska <pbegovska@gmail.com>
+Date:   Fri Apr 19 13:08:06 2024 +0300
 
-    chore(ui5-icon): update focus handling (#8773)
+    docs: create new blog post  (#8805)
     
-    Adjusted `ui5-icon` focus display rules. On desktop, focus outline is
-    always visible. For mobile, focus outline only appears with an external
-    keyboard, it remains hidden for touch focus.
-    
-    Related to: #8320
+    Create a new blog post announcing UI5 Web Components Release Candidate 2.0.
