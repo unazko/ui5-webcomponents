@@ -123,14 +123,6 @@ declare abstract class ListItem extends ListItemBase {
     */
     actionable: boolean;
     /**
-     * Used to define the role of the list item.
-     * @private
-     * @default "listitem"
-     * @since 1.0.0-rc.9
-     *
-     */
-    role: string;
-    /**
      * Defines the description for the accessible role of the component.
      * @protected
      * @default undefined
