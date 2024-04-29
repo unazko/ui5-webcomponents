@@ -271,7 +271,7 @@ let DatePicker = DatePicker_1 = class DatePicker extends DateComponentBase {
     _updateValueState() {
         const valid = this._checkValueValidity(this.value);
         const previousValueState = this.valueState;
-        this.valueState = valid ? ValueState.None : ValueState.Error;
+        this.valueState = valid ? ValueState.None : ValueState.Negative;
         const eventPrevented = !this.fireEvent("value-state-change", { valueState: this.valueState, valid }, true);
         if (eventPrevented) {
             this.valueState = previousValueState;

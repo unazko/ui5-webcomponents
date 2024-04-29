@@ -111,7 +111,7 @@ declare abstract class ListItem extends ListItemBase {
     title: string;
     /**
      * Defines the highlight state of the list items.
-     * Available options are: `"None"` (by default), `"Success"`, `"Warning"`, `"Information"` and `"Error"`.
+     * Available options are: `"None"` (by default), `"Positive"`, `"Critical"`, `"Information"` and `"Negative"`.
      * @default "None"
      * @public
      * @since 1.24
@@ -122,13 +122,6 @@ declare abstract class ListItem extends ListItemBase {
      * @private
     */
     actionable: boolean;
-    /**
-     * Defines the description for the accessible role of the component.
-     * @protected
-     * @default undefined
-     * @since 1.10.0
-     */
-    accessibleRoleDescription?: string;
     /**
      * Used to define the role of the list item.
      * @private

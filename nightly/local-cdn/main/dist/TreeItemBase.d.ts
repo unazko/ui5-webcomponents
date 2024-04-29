@@ -72,7 +72,7 @@ declare class TreeItemBase extends ListItem {
     /**
      * Defines the state of the `additionalText`.
      *
-     * Available options are: `"None"` (by default), `"Success"`, `"Warning"`, `"Information"` and `"Error"`.
+     * Available options are: `"None"` (by default), `"Positive"`, `"Critical"`, `"Information"` and `"Negative"`.
      * @default "None"
      * @public
      * @since 1.0.0-rc.15
@@ -120,7 +120,7 @@ declare class TreeItemBase extends ListItem {
     get effectiveLevel(): number;
     get hasParent(): boolean;
     get _toggleIconName(): "navigation-down-arrow" | "navigation-right-arrow";
-    get _ariaLabel(): string | undefined;
+    get _ariaLabel(): string;
     get _accInfo(): {
         role: string;
         ariaExpanded: boolean | undefined;

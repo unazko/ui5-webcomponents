@@ -1,5 +1,7 @@
-commit e110d1f5fe56d50090f3fcff8930c14b1d9ab63f
-Author: Vladislav Tasev <vladitasev@users.noreply.github.com>
-Date:   Wed Apr 24 09:06:27 2024 +0300
+commit a6122bee2844e353733b738071f606a1d6703745
+Author: ilhan orhan <ilhan.orhan007@gmail.com>
+Date:   Sat Apr 27 21:40:36 2024 +0300
 
-    chore: clean up TimePicker classes (#8831)
+    docs: fix SegmentedButton multiple selection sample (#8869)
+    
+    The API of the SegmentedButton has been recently changed, but the oficial sample was not adapted

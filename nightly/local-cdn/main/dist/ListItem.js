@@ -300,9 +300,6 @@ __decorate([
     property({ type: Boolean })
 ], ListItem.prototype, "actionable", void 0);
 __decorate([
-    property({ defaultValue: undefined, noAttribute: true })
-], ListItem.prototype, "accessibleRoleDescription", void 0);
-__decorate([
     property()
 ], ListItem.prototype, "accessibleRole", void 0);
 __decorate([
