@@ -1,7 +1,7 @@
-commit a6122bee2844e353733b738071f606a1d6703745
-Author: ilhan orhan <ilhan.orhan007@gmail.com>
-Date:   Sat Apr 27 21:40:36 2024 +0300
+commit 81298c4fc1c98b3e7e09f11d943ae9269d30c503
+Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
+Date:   Fri May 10 18:13:15 2024 +0300
 
-    docs: fix SegmentedButton multiple selection sample (#8869)
+    docs: enhance features (#8939)
     
-    The API of the SegmentedButton has been recently changed, but the oficial sample was not adapted
+    Added info about F6 feature (how it works and its usage) and arranged other features description.

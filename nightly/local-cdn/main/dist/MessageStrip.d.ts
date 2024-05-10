@@ -66,7 +66,7 @@ declare class MessageStrip extends UI5Element {
      *
      * @default "1"
      * @public
-     * @since 2.0
+     * @since 2.0.0
      */
     colorScheme: string;
     /**
@@ -105,7 +105,7 @@ declare class MessageStrip extends UI5Element {
     get _closableText(): string;
     get classes(): ClassMap;
     get iconProvided(): boolean;
-    get standardIconName(): "sys-enter-2" | "error" | "alert" | "information" | null;
+    get standardIconName(): "error" | "alert" | "sys-enter-2" | "information" | null;
     get designClasses(): DesignClassesMapping;
 }
 export default MessageStrip;

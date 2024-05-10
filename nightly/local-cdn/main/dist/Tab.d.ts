@@ -1,6 +1,7 @@
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
 import type { ITabbable } from "@ui5/webcomponents-base/dist/delegate/ItemNavigation.js";
+import type { AccessibilityAttributes } from "@ui5/webcomponents-base/dist/types.js";
 import "@ui5/webcomponents-icons/dist/error.js";
 import "@ui5/webcomponents-icons/dist/alert.js";
 import "@ui5/webcomponents-icons/dist/sys-enter-2.js";
@@ -120,6 +121,7 @@ declare class Tab extends UI5Element implements ITabbable, ITab {
     get _effectiveSlotName(): string;
     get _defaultSlotName(): "" | "disabled-slot";
     get hasOwnContent(): boolean;
+    get expandBtnAccessibilityAttributes(): Pick<AccessibilityAttributes, "hasPopup">;
     receiveStripInfo({ getElementInStrip, posinset, setsize, isInline, isTopLevelTab, mixedMode, }: TabContainerStripInfo): void;
     receiveOverflowInfo({ getElementInOverflow, style }: TabContainerOverflowInfo): void;
     /**
@@ -150,7 +152,7 @@ declare class Tab extends UI5Element implements ITabbable, ITab {
     get expandButtonTitle(): string;
     get _roleDescription(): string | undefined;
     get _ariaHasPopup(): "menu" | undefined;
-    get semanticIconName(): "sys-enter-2" | "error" | "alert" | null;
+    get semanticIconName(): "error" | "alert" | "sys-enter-2" | null;
     get _designDescription(): string | null;
     get semanticIconClasses(): string;
     get overflowClasses(): string;

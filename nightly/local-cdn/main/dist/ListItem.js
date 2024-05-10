@@ -23,9 +23,9 @@ import RadioButton from "./RadioButton.js";
 import CheckBox from "./CheckBox.js";
 import Button from "./Button.js";
 import { DELETE, ARIA_LABEL_LIST_ITEM_CHECKBOX, ARIA_LABEL_LIST_ITEM_RADIO_BUTTON, LIST_ITEM_SELECTED, LIST_ITEM_NOT_SELECTED, } from "./generated/i18n/i18n-defaults.js";
+import ListItemAccessibleRole from "./types/ListItemAccessibleRole.js";
 // Styles
 import styles from "./generated/themes/ListItem.css.js";
-import HasPopup from "./types/HasPopup.js";
 // Icons
 import "@ui5/webcomponents-icons/dist/slim-arrow-right.js";
 /**
@@ -223,6 +223,9 @@ let ListItem = ListItem_1 = class ListItem extends ListItemBase {
         }
         return undefined;
     }
+    get listItemAccessibleRole() {
+        return this.accessibleRole.toLowerCase();
+    }
     get ariaSelectedText() {
         let ariaSelectedText;
         // Selected state needs to be supported separately since now the role mapping is list -> listitem[]
@@ -250,16 +253,16 @@ let ListItem = ListItem_1 = class ListItem extends ListItemBase {
     }
     get _accInfo() {
         return {
-            role: this.accessibleRole,
+            role: this.listItemAccessibleRole,
             ariaExpanded: undefined,
             ariaLevel: undefined,
             ariaLabel: ListItem_1.i18nBundle.getText(ARIA_LABEL_LIST_ITEM_CHECKBOX),
             ariaLabelRadioButton: ListItem_1.i18nBundle.getText(ARIA_LABEL_LIST_ITEM_RADIO_BUTTON),
             ariaSelectedText: this.ariaSelectedText,
-            ariaHaspopup: this.ariaHaspopup?.toLowerCase() || undefined,
+            ariaHaspopup: this.accessibilityAttributes.hasPopup,
             setsize: this.accessibilityAttributes.ariaSetsize,
             posinset: this.accessibilityAttributes.ariaPosinset,
-            tooltip: this.tooltip || this.title,
+            tooltip: this.tooltip,
         };
     }
     get _hasHighlightColor() {
@@ -291,23 +294,17 @@ __decorate([
     property({ type: Boolean })
 ], ListItem.prototype, "active", void 0);
 __decorate([
-    property()
-], ListItem.prototype, "title", void 0);
-__decorate([
     property({ type: HighlightTypes, defaultValue: HighlightTypes.None })
 ], ListItem.prototype, "highlight", void 0);
 __decorate([
     property({ type: Boolean })
 ], ListItem.prototype, "actionable", void 0);
 __decorate([
-    property()
+    property({ type: ListItemAccessibleRole, defaultValue: ListItemAccessibleRole.ListItem })
 ], ListItem.prototype, "accessibleRole", void 0);
 __decorate([
     property({ type: ListSelectionMode, defaultValue: ListSelectionMode.None })
 ], ListItem.prototype, "_selectionMode", void 0);
-__decorate([
-    property({ type: HasPopup, noAttribute: true })
-], ListItem.prototype, "ariaHaspopup", void 0);
 __decorate([
     slot()
 ], ListItem.prototype, "deleteButton", void 0);

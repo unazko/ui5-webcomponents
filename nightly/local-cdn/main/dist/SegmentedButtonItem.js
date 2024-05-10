@@ -91,6 +91,12 @@ __decorate([
     property()
 ], SegmentedButtonItem.prototype, "tooltip", void 0);
 __decorate([
+    property({ defaultValue: undefined })
+], SegmentedButtonItem.prototype, "accessibleName", void 0);
+__decorate([
+    property({ defaultValue: "" })
+], SegmentedButtonItem.prototype, "accessibleNameRef", void 0);
+__decorate([
     property()
 ], SegmentedButtonItem.prototype, "icon", void 0);
 __decorate([

@@ -256,7 +256,7 @@ let Select = Select_1 = class Select extends UI5Element {
                 icon: opt.icon,
                 value: opt.value,
                 textContent: opt.textContent,
-                title: opt.title,
+                tooltip: opt.tooltip,
                 additionalText: opt.additionalText,
                 id: opt._id,
                 stableDomRef: opt.stableDomRef,
