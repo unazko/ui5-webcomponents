@@ -222,7 +222,7 @@ declare class TextArea extends UI5Element implements IFormElement {
     _onResize(): void;
     _setCSSParams(): void;
     toggleValueStateMessage(toggle: boolean): void;
-    openPopover(): Promise<void>;
+    openPopover(): void;
     closePopover(): void;
     _getPopover(): Popover;
     _tokenizeText(value: string): {

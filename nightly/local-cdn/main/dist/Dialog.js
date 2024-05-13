@@ -128,20 +128,8 @@ let Dialog = Dialog_1 = class Dialog extends Popup {
     static _isHeader(element) {
         return element.classList.contains("ui5-popup-header-root") || element.getAttribute("slot") === "header";
     }
-    /**
-     * Shows the dialog.
-     * @param [preventInitialFocus=false] Prevents applying the focus inside the popup
-     * @public
-     * @returns Resolves when the dialog is open
-     */
-    async show(preventInitialFocus = false) {
-        await super._open(preventInitialFocus);
-    }
     get isModal() {
         return true;
-    }
-    get shouldHideBackdrop() {
-        return false;
     }
     get _ariaLabelledBy() {
         let ariaLabelledById;

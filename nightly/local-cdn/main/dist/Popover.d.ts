@@ -94,13 +94,6 @@ declare class Popover extends Popup {
      */
     modal: boolean;
     /**
-     * Defines whether the block layer will be shown if modal property is set to true.
-     * @default false
-     * @public
-     * @since 1.0.0-rc.10
-     */
-    hideBackdrop: boolean;
-    /**
      * Determines whether the component arrow is hidden.
      * @default false
      * @public
@@ -167,14 +160,6 @@ declare class Popover extends Popup {
     openPopup(): Promise<void>;
     isOpenerClicked(e: MouseEvent): boolean;
     /**
-     * Shows the popover.
-     * @param opener the element that the popover is shown at
-     * @param [preventInitialFocus=false] prevents applying the focus inside the popover
-     * @public
-     * @returns Resolved when the popover is open
-     */
-    showAt(opener: HTMLElement, preventInitialFocus?: boolean): Promise<void>;
-    /**
      * Override for the _addOpenedPopup hook, which would otherwise just call addOpenedPopup(this)
      * @private
      */
@@ -233,7 +218,6 @@ declare class Popover extends Popup {
     getVerticalLeft(targetRect: DOMRect, popoverSize: PopoverSize): number;
     getHorizontalTop(targetRect: DOMRect, popoverSize: PopoverSize): number;
     get isModal(): boolean;
-    get shouldHideBackdrop(): boolean;
     get _ariaLabelledBy(): "ui5-popup-header" | undefined;
     get styles(): {
         root: {

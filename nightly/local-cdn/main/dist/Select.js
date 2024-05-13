@@ -226,10 +226,11 @@ let Select = Select_1 = class Select extends UI5Element {
         }
         this.responsivePopover = this._respPopover();
         if (this._isPickerOpen) {
-            this.responsivePopover.close();
+            this.responsivePopover.open = false;
         }
         else {
-            this.responsivePopover.showAt(this);
+            this.responsivePopover.opener = this;
+            this.responsivePopover.open = true;
         }
     }
     _attachRealDomRefs() {
@@ -328,10 +329,10 @@ let Select = Select_1 = class Select extends UI5Element {
         if (isTab && this._isPickerOpen) {
             const menu = this._getSelectMenu();
             if (menu) {
-                menu.close(false, false, true /* preventFocusRestore */);
+                menu.close(true /* preventFocusRestore */);
             }
             else {
-                this.responsivePopover.close();
+                this.responsivePopover.open = false;
             }
         }
         else if (isShow(e)) {
@@ -686,11 +687,12 @@ let Select = Select_1 = class Select extends UI5Element {
     openValueStatePopover() {
         this.valueStatePopover = this._getPopover();
         if (this.valueStatePopover) {
-            this.valueStatePopover.showAt(this);
+            this.valueStatePopover.opener = this;
+            this.valueStatePopover.open = true;
         }
     }
     closeValueStatePopover() {
-        this.valueStatePopover && this.valueStatePopover.close();
+        this.valueStatePopover && (this.valueStatePopover.open = false);
     }
     toggleValueStatePopover(open) {
         if (open) {

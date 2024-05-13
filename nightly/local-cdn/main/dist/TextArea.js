@@ -164,13 +164,18 @@ let TextArea = TextArea_1 = class TextArea extends UI5Element {
             this.closePopover();
         }
     }
-    async openPopover() {
+    openPopover() {
         this.valueStatePopover = this._getPopover();
-        this.valueStatePopover && await this.valueStatePopover.showAt(this.shadowRoot.querySelector(".ui5-textarea-root .ui5-textarea-wrapper"));
+        if (this.valueStatePopover) {
+            this.valueStatePopover.opener = this.shadowRoot.querySelector(".ui5-textarea-root .ui5-textarea-wrapper");
+            this.valueStatePopover.open = true;
+        }
     }
     closePopover() {
         this.valueStatePopover = this._getPopover();
-        this.valueStatePopover && this.valueStatePopover.close();
+        if (this.valueStatePopover) {
+            this.valueStatePopover.open = false;
+        }
     }
     _getPopover() {
         return this.shadowRoot.querySelector("[ui5-popover]");

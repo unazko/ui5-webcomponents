@@ -378,7 +378,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
         return this.responsivePopover.content[0].items.find(item => item.classList.contains("ui5-tab-overflow-item"));
     }
     _findTabInOverflow(realTab) {
-        if (!this.responsivePopover.isOpen()) {
+        if (!this.responsivePopover.open) {
             return undefined;
         }
         return this.responsivePopover.content[0].items.find(item => item.realTabReference === realTab);
@@ -812,7 +812,7 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
     }
     async _togglePopover(opener, setInitialFocus = false) {
         this.responsivePopover = await this._respPopover();
-        if (this.responsivePopover.isOpen()) {
+        if (this.responsivePopover.open) {
             this._closePopover();
         }
         else {
@@ -827,7 +827,9 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
             this._setPopoverInitialFocus();
         }
         if (this._hasScheduledPopoverOpen) {
-            await this.responsivePopover.showAt(opener, preventInitialFocus);
+            this.responsivePopover.preventInitialFocus = preventInitialFocus;
+            this.responsivePopover.opener = opener;
+            this.responsivePopover.open = true;
         }
     }
     get hasItems() {
@@ -860,7 +862,9 @@ let TabContainer = TabContainer_1 = class TabContainer extends UI5Element {
     }
     _closePopover() {
         this._hasScheduledPopoverOpen = false;
-        this.responsivePopover?.close();
+        if (this.responsivePopover) {
+            this.responsivePopover.open = false;
+        }
     }
     get dropIndicatorDOM() {
         return this.shadowRoot.querySelector("[ui5-drop-indicator]");

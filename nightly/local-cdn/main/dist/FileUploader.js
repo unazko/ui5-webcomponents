@@ -175,13 +175,14 @@ let FileUploader = FileUploader_1 = class FileUploader extends UI5Element {
     openValueStatePopover() {
         const popover = this._getPopover();
         if (popover) {
-            popover.showAt(this);
+            popover.opener = this;
+            popover.open = true;
         }
     }
     closeValueStatePopover() {
         const popover = this._getPopover();
         if (popover) {
-            popover.close();
+            popover.open = false;
         }
     }
     _getPopover() {

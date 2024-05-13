@@ -94,6 +94,9 @@ let Popover = Popover_1 = class Popover extends Popup {
         return this._opener;
     }
     async openPopup() {
+        if (this._opened) {
+            return;
+        }
         let opener;
         if (this.opener instanceof HTMLElement) {
             opener = this.opener;
@@ -112,10 +115,12 @@ let Popover = Popover_1 = class Popover extends Popup {
             return;
         }
         if (this.isOpenerOutsideViewport(opener.getBoundingClientRect())) {
-            this.fireEvent("after-close", {}, false, false);
+            this.fireEvent("close", {}, false, false);
             return;
         }
-        await this.showAt(opener);
+        this._opener = opener;
+        this._openerRect = opener.getBoundingClientRect();
+        await super.openPopup();
     }
     isOpenerClicked(e) {
         const target = e.target;
@@ -127,21 +132,6 @@ let Popover = Popover_1 = class Popover extends Popup {
             return true;
         }
         return e.composedPath().indexOf(this._opener) > -1;
-    }
-    /**
-     * Shows the popover.
-     * @param opener the element that the popover is shown at
-     * @param [preventInitialFocus=false] prevents applying the focus inside the popover
-     * @public
-     * @returns Resolved when the popover is open
-     */
-    async showAt(opener, preventInitialFocus = false) {
-        if (!opener || this._isOpened) {
-            return;
-        }
-        this._opener = opener;
-        this._openerRect = opener.getBoundingClientRect();
-        await super._open(preventInitialFocus);
     }
     /**
      * Override for the _addOpenedPopup hook, which would otherwise just call addOpenedPopup(this)
@@ -168,7 +158,7 @@ let Popover = Popover_1 = class Popover extends Popup {
         const closedPopupParent = getClosedPopupParent(this._opener);
         let overflowsBottom = false;
         let overflowsTop = false;
-        if (closedPopupParent.showAt) {
+        if (closedPopupParent instanceof Popover_1) {
             const contentRect = closedPopupParent.contentDOM.getBoundingClientRect();
             overflowsBottom = openerRect.top > (contentRect.top + contentRect.height);
             overflowsTop = (openerRect.top + openerRect.height) < contentRect.top;
@@ -201,7 +191,7 @@ let Popover = Popover_1 = class Popover extends Popup {
     }
     _show() {
         super._show();
-        if (!this._isOpened) {
+        if (!this._opened) {
             this._showOutsideViewport();
         }
         const popoverSize = this.getPopoverSize();
@@ -210,7 +200,7 @@ let Popover = Popover_1 = class Popover extends Popup {
             // size can not be determined properly at this point, popover will be shown with the next reposition
             return;
         }
-        if (this.isOpen()) {
+        if (this.open) {
             // update opener rect if it was changed during the popover being opened
             this._openerRect = this._opener.getBoundingClientRect();
         }
@@ -223,7 +213,7 @@ let Popover = Popover_1 = class Popover extends Popup {
             placement = this.calcPlacement(this._openerRect, popoverSize);
         }
         if (this._preventRepositionAndClose || this.isOpenerOutsideViewport(this._openerRect)) {
-            return this.close();
+            return this.closePopup();
         }
         this._oldPlacement = placement;
         this.actualPlacement = placement.placement;
@@ -501,9 +491,6 @@ let Popover = Popover_1 = class Popover extends Popup {
     get isModal() {
         return this.modal;
     }
-    get shouldHideBackdrop() {
-        return this.hideBackdrop;
-    }
     get _ariaLabelledBy() {
         if (!this._ariaLabel && this._displayHeader) {
             return "ui5-popup-header";
@@ -568,9 +555,6 @@ __decorate([
 ], Popover.prototype, "modal", void 0);
 __decorate([
     property({ type: Boolean })
-], Popover.prototype, "hideBackdrop", void 0);
-__decorate([
-    property({ type: Boolean })
 ], Popover.prototype, "hideArrow", void 0);
 __decorate([
     property({ type: Boolean })
@@ -615,7 +599,7 @@ Popover = Popover_1 = __decorate([
     })
 ], Popover);
 const instanceOfPopover = (object) => {
-    return "showAt" in object;
+    return "opener" in object;
 };
 Popover.define();
 export default Popover;

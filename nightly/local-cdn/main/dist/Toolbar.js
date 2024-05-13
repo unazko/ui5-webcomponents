@@ -212,16 +212,17 @@ let Toolbar = Toolbar_1 = class Toolbar extends UI5Element {
      */
     isOverflowOpen() {
         const overflowPopover = this.getOverflowPopover();
-        return overflowPopover.isOpen();
+        return overflowPopover.open;
     }
     openOverflow() {
         const overflowPopover = this.getOverflowPopover();
-        overflowPopover.showAt(this.overflowButtonDOM);
+        overflowPopover.opener = this.overflowButtonDOM;
+        overflowPopover.open = true;
         this.reverseOverflow = overflowPopover.actualPlacement === "Top";
     }
     closeOverflow() {
         const overflowPopover = this.getOverflowPopover();
-        overflowPopover.close();
+        overflowPopover.open = false;
     }
     toggleOverflow() {
         if (this.popoverOpen) {

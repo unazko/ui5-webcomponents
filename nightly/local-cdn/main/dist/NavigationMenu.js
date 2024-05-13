@@ -86,7 +86,7 @@ let NavigationMenu = NavigationMenu_1 = class NavigationMenu extends Menu {
                 parentMenu = openerMenuItem.parentElement;
                 openerMenuItem = parentMenu._parentMenuItem;
             } while (parentMenu._parentMenuItem);
-            mainMenu._popover.close();
+            mainMenu._popover.open = false;
         }
         this._prepareSubMenu(item, opener);
     }

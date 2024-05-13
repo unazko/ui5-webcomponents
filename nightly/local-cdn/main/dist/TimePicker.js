@@ -166,7 +166,8 @@ let TimePicker = TimePicker_1 = class TimePicker extends UI5Element {
     openPicker() {
         this.tempValue = this.value && this.isValid(this.value) ? this.value : this.getFormat().format(UI5Date.getInstance());
         const responsivePopover = this._getPopover();
-        responsivePopover.showAt(this);
+        responsivePopover.opener = this;
+        responsivePopover.open = true;
     }
     /**
      * Closes the picker
@@ -175,7 +176,7 @@ let TimePicker = TimePicker_1 = class TimePicker extends UI5Element {
      */
     closePicker() {
         const responsivePopover = this._getPopover();
-        responsivePopover.close();
+        responsivePopover.open = false;
         this._isPickerOpen = false;
     }
     togglePicker() {
@@ -213,7 +214,8 @@ let TimePicker = TimePicker_1 = class TimePicker extends UI5Element {
     openInputsPopover() {
         this.tempValue = this.value && this.isValid(this.value) ? this.value : this.getFormat().format(UI5Date.getInstance());
         const popover = this._getInputsPopover();
-        popover.showAt(this);
+        popover.opener = this;
+        popover.open = true;
         this._isInputsPopoverOpen = true;
     }
     /**
@@ -223,7 +225,7 @@ let TimePicker = TimePicker_1 = class TimePicker extends UI5Element {
      */
     closeInputsPopover() {
         const popover = this._getInputsPopover();
-        popover.close();
+        popover.open = false;
     }
     toggleInputsPopover() {
         if (this.isInputsPopoverOpen()) {

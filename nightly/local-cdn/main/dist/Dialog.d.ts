@@ -172,15 +172,7 @@ declare class Dialog extends Popup {
     constructor();
     static onDefine(): Promise<void>;
     static _isHeader(element: HTMLElement): boolean;
-    /**
-     * Shows the dialog.
-     * @param [preventInitialFocus=false] Prevents applying the focus inside the popup
-     * @public
-     * @returns Resolves when the dialog is open
-     */
-    show(preventInitialFocus?: boolean): Promise<void>;
     get isModal(): boolean;
-    get shouldHideBackdrop(): boolean;
     get _ariaLabelledBy(): string | undefined;
     get ariaRoleDescriptionHeaderText(): string | undefined;
     get effectiveAriaDescribedBy(): string | undefined;

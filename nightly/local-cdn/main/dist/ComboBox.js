@@ -124,8 +124,8 @@ let ComboBox = ComboBox_1 = class ComboBox extends UI5Element {
             const items = this._filterItems(this.filterValue);
             this._filteredItems = items.length ? items : this.items;
         }
-        if (!this._initialRendering && document.activeElement === this && !this._filteredItems.length) {
-            popover?.close();
+        if (!this._initialRendering && document.activeElement === this && !this._filteredItems.length && popover) {
+            popover.open = false;
         }
         this._selectMatchingItem();
         this._initialRendering = false;
@@ -144,7 +144,8 @@ let ComboBox = ComboBox_1 = class ComboBox extends UI5Element {
     async onAfterRendering() {
         const picker = await this._getPicker();
         if ((await this.shouldClosePopover()) && !isPhone()) {
-            picker.close(false, false, true);
+            picker.preventFocusRestore = true;
+            picker.open = false;
             this._clearFocus();
             this._itemFocused = false;
         }
@@ -223,10 +224,17 @@ let ComboBox = ComboBox_1 = class ComboBox extends UI5Element {
         }
     }
     async openValueStatePopover() {
-        (await this._getValueStatePopover())?.showAt(this);
+        const valueStatePopover = await this._getValueStatePopover();
+        if (valueStatePopover) {
+            valueStatePopover.opener = this;
+            valueStatePopover.open = true;
+        }
     }
     async closeValueStatePopover() {
-        (await this._getValueStatePopover())?.close();
+        const valueStatePopover = await this._getValueStatePopover();
+        if (valueStatePopover) {
+            valueStatePopover.open = false;
+        }
     }
     async _getValueStatePopover() {
         await renderFinished();
@@ -523,10 +531,15 @@ let ComboBox = ComboBox_1 = class ComboBox extends UI5Element {
         }
         this._isValueStateFocused = false;
         this._clearFocus();
-        picker?.close();
+        if (picker) {
+            picker.preventFocusRestore = false;
+            picker.open = false;
+        }
     }
     async _openRespPopover() {
-        (await this._getPicker()).showAt(this, true);
+        const picker = await this._getPicker();
+        picker.opener = this;
+        picker.open = true;
     }
     _filterItems(str) {
         const itemsToFilter = this.items.filter(item => !item.isGroupItem);

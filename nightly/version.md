@@ -1,5 +1,32 @@
-commit 30c053046d1bfbbcb880a5dd10f3f177fdbfbec7
-Author: Petar Dimov <32839090+dimovpetar@users.noreply.github.com>
-Date:   Mon May 13 09:55:58 2024 +0300
+commit 912167d18cd5e365a03513defc570da5bf372715
+Author: TeodorTaushanov <teodor.taushanov@sap.com>
+Date:   Mon May 13 16:39:49 2024 +0300
 
-    fix(ui5-side-navigation): menu in collapsed mode width is not longer stretched unnecessary (#8940)
+    refactor(ui5-popup): rename after-open and after-close events to 'open' and 'close' (#8946)
+    
+    Change the event names in popup from `after-close` and `after-open` to `close` and `open`.
+    
+    BREAKING CHANGE: Event names `after-close` and `after-open` are now named `close` and `open`.
+    Previously the application developers could subscribe to the events as follows:
+    ```ts
+    popup.addEventListener("after-open", function() {
+            //...
+    });
+    popup.addEventListener("after-close", function() {
+            //...
+    });
+    ```
+    
+    Now the application developers should include the ui5-bar as follows:
+    ```ts
+    popup.addEventListener("open", function() {
+            //...
+    });
+    
+    popup.addEventListener("close", function() {
+            //...
+    });
+    
+    ```
+    
+    Related to #8461

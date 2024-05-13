@@ -317,7 +317,8 @@ let DatePicker = DatePicker_1 = class DatePicker extends DateComponentBase {
     }
     _click(e) {
         if (isPhone()) {
-            this.responsivePopover.showAt(this);
+            this.responsivePopover.opener = this;
+            this.responsivePopover.open = true;
             e.preventDefault(); // prevent immediate selection of any item
         }
     }

@@ -95,7 +95,7 @@ let Menu = Menu_1 = class Menu extends UI5Element {
         return isPhone();
     }
     get isSubMenuOpened() {
-        return this._parentMenuItem && this._popover?.isOpen();
+        return this._parentMenuItem && this._popover?.open;
     }
     get menuHeaderTextPhone() {
         return this._parentMenuItem ? this._parentMenuItem.text : this.headerText;
@@ -147,14 +147,19 @@ let Menu = Menu_1 = class Menu extends UI5Element {
         const loadingWithoutItems = !this._parentMenuItem?.items.length && this._parentMenuItem?.loading;
         const popover = await this._createPopover();
         popover.initialFocus = `${this._id}-menu-item-0`;
-        popover.showAt(opener, loadingWithoutItems);
+        popover.preventInitialFocus = !!loadingWithoutItems;
+        popover.opener = opener;
+        popover.open = true;
     }
     /**
      * Closes the Menu.
      * @public
      */
     close() {
-        this._popover?.close(false, false, true);
+        if (this._popover) {
+            this._popover.preventFocusRestore = true;
+            this._popover.open = false;
+        }
     }
     async _createPopover() {
         if (!this._popover) {
@@ -213,7 +218,8 @@ let Menu = Menu_1 = class Menu extends UI5Element {
         mainMenu?.fireEvent("before-open", {
             item,
         }, false, false);
-        item._subMenu.showAt(opener);
+        item._subMenu.opener = opener;
+        item._subMenu.open = true;
         item._preventSubMenuClose = true;
         this._openedSubMenuItem = item;
         this._subMenuOpenerId = opener.id;
@@ -233,7 +239,7 @@ let Menu = Menu_1 = class Menu extends UI5Element {
         if (subMenu) {
             const parentItem = subMenu._parentMenuItem;
             if (forceClose || !parentItem._preventSubMenuClose) {
-                subMenu.close();
+                subMenu.open = false;
                 if (keyboard) {
                     subMenu._opener?.focus();
                 }
@@ -335,7 +341,7 @@ let Menu = Menu_1 = class Menu extends UI5Element {
                     "text": item.text,
                 }, true, false);
                 if (!prevented) {
-                    this._popover.close();
+                    this._popover.open = false;
                 }
             }
             else {
@@ -353,7 +359,8 @@ let Menu = Menu_1 = class Menu extends UI5Element {
                         parentMenu = openerMenuItem.parentElement;
                         openerMenuItem = parentMenu._parentMenuItem;
                     } while (parentMenu._parentMenuItem);
-                    mainMenu._popover.close();
+                    mainMenu._popover.preventFocusRestore = false;
+                    mainMenu._popover.open = false;
                 }
             }
         }
