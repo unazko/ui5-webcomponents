@@ -1,7 +1,5 @@
-commit 81298c4fc1c98b3e7e09f11d943ae9269d30c503
-Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
-Date:   Fri May 10 18:13:15 2024 +0300
+commit 30c053046d1bfbbcb880a5dd10f3f177fdbfbec7
+Author: Petar Dimov <32839090+dimovpetar@users.noreply.github.com>
+Date:   Mon May 13 09:55:58 2024 +0300
 
-    docs: enhance features (#8939)
-    
-    Added info about F6 feature (how it works and its usage) and arranged other features description.
+    fix(ui5-side-navigation): menu in collapsed mode width is not longer stretched unnecessary (#8940)
