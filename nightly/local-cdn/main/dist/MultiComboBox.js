@@ -53,8 +53,9 @@ import SuggestionsCss from "./generated/themes/Suggestions.css.js";
 import MultiComboBoxPopover from "./generated/themes/MultiComboBoxPopover.css.js";
 import ComboBoxFilter from "./types/ComboBoxFilter.js";
 import CheckBox from "./CheckBox.js";
-import "./Input.js";
+import Input from "./Input.js";
 import "./types/PopoverHorizontalAlign.js";
+import SuggestionItem from "./SuggestionItem.js";
 /**
  * @class
  *
@@ -1424,6 +1425,7 @@ MultiComboBox = MultiComboBox_1 = __decorate([
             Tokenizer,
             Token,
             Icon,
+            Input,
             ResponsivePopover,
             Popover,
             List,
@@ -1432,6 +1434,7 @@ MultiComboBox = MultiComboBox_1 = __decorate([
             ToggleButton,
             Button,
             CheckBox,
+            SuggestionItem,
         ],
     })
     /**

@@ -33,7 +33,7 @@ const customElement = (tagNameOrComponentSettings = {}) => {
         ["renderer", "template", "styles", "dependencies"].forEach((customElementEntity) => {
             const customElementEntityValue = tagNameOrComponentSettings[customElementEntity];
             customElementEntityValue && Object.defineProperty(target, customElementEntity, {
-                get: () => customElementEntityValue,
+                get: () => tagNameOrComponentSettings[customElementEntity],
             });
         });
     };
