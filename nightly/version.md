@@ -1,9 +1,9 @@
-commit 7ff177cd233bfdc6707499622200702c17043782
-Author: TeodorTaushanov <teodor.taushanov@sap.com>
-Date:   Wed May 15 13:42:35 2024 +0300
+commit 410ba3ff7c49eaa46a8e0c4d756897c42a11aadc
+Author: Hristo Petrov <h.petrov@sap.com>
+Date:   Fri May 17 12:03:57 2024 +0300
 
-    fix(ui5-responsive-popover): fix initially focused input going out of the viewport on iPhone (#8945)
+    feat(ui5-input): add input type search (#8980)
     
-    * fix(ui5-responsive-popover): fix initially focused input going out of the viewport on iPhone
+    Additional "Search" type added to the input types.
     
-    * chore: fix lint errors
+    FIXES: #7641
