@@ -1,9 +1,7 @@
-commit 410ba3ff7c49eaa46a8e0c4d756897c42a11aadc
-Author: Hristo Petrov <h.petrov@sap.com>
-Date:   Fri May 17 12:03:57 2024 +0300
+commit f7c04223d2d8317d07d5c756ca9c2fe676999976
+Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
+Date:   Fri May 17 18:43:16 2024 +0300
 
-    feat(ui5-input): add input type search (#8980)
+    chore: update chromedrive (#8994)
     
-    Additional "Search" type added to the input types.
-    
-    FIXES: #7641
+    chore: bump chromedriver version
