@@ -1,7 +1,7 @@
-commit f7c04223d2d8317d07d5c756ca9c2fe676999976
-Author: Nayden Naydenov <31909318+nnaydenow@users.noreply.github.com>
-Date:   Fri May 17 18:43:16 2024 +0300
+commit 7c7170d4a7d5f7b1f76aa9670baac498b954a425
+Author: Boyan Rakilovski <boyan.rakilovski@sap.com>
+Date:   Sat May 18 12:38:17 2024 +0300
 
-    chore: update chromedrive (#8994)
+    fix(ui5-time-picker): remove box shadow (#8951)
     
-    chore: bump chromedriver version
+    Fixes: #8932
