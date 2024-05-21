@@ -12,7 +12,7 @@ import type { ClassMap } from "@ui5/webcomponents-base/dist/types.js";
  */
 declare class ListItemBase extends UI5Element implements ITabbable {
     /**
-     * Defines the selected state of the `ListItem`.
+     * Defines the selected state of the component.
      * @default false
      * @public
      */
