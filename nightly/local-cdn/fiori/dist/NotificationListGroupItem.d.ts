@@ -80,7 +80,8 @@ declare class NotificationListGroupItem extends NotificationListItemBase {
      *
      */
     _onHeaderToggleClick(): void;
-    _onkeydown(e: KeyboardEvent): void;
+    _onkeydown(e: KeyboardEvent): Promise<void>;
+    getHeaderDomRef(): HTMLElement;
 }
 export default NotificationListGroupItem;
 export type { NotificationListGroupItemToggleEventDetail, };

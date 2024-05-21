@@ -1,36 +1,23 @@
-commit 8d6fac75151fd3f42f58ec29cc8f27d0383114d2
-Author: Dobrin Dimchev <dobrin.dimchev@sap.com>
-Date:   Tue May 21 11:17:21 2024 +0300
+commit 49abb03cad8bbc70c4ecb38e9b41dffa0c51720a
+Author: Boyan Rakilovski <boyan.rakilovski@sap.com>
+Date:   Tue May 21 13:58:50 2024 +0300
 
-    refactor(ui5-option): make options physical elements (#8903)
+    refactor(ui5-menu): make menu items physical (#8722)
     
-    Removes the ui5-select-menu and ui5-select-menu-option components.
+    The `ui5-menu-item` now extends `ListItem` abstract class and it
+    will be represented directly as a list item in the DOM.
+    The application developers could now add custom styles and attach native event handlers
+    to the `ui5-menu-item` as it is no longer an abstract class, but a physical component:
     
-    BREAKING CHANGE: The ui5-select-menu and ui5-select-menu-option components are removed. Custom options can now be created using the ui5-option-custom, directly placed inside the default slot of the ui5-select
+    ```html
+    <ui5-menu-item id="exitItem" text="Exit" style="border: 2px solid teal" icon="journey-arrive"></ui5-menu-item>
+    ```
     
-    SelectMenu & SelectMenuOption
-    Changed item    Old     New
-    SelectMenu      ui5-select-menu removed
-    SelectMenuOption        ui5-select-menu-option  ui5-option-custom
-    If you have previously used the ui5-select-menu and ui5-select-menu-option:
+    ```ts
+    document.getElementById("exitItem").addEventListener("focusin", () => {
+        ...
+    })
+    ```
     
-    <ui5-select menu="selectMenu"></ui5-select>
-    
-    <ui5-select-menu id="selectMenu">
-        <ui5-select-menu-option>
-            <div class="optionContent">custom</div>
-        </ui5-select-menu-option>
-    </ui5-select-menu>
-    Now use just ui5-select and ui5-option-custom instead:
-    
-    <ui5-select>
-        <ui5-option-custom>
-            <div class="optionContent">custom</div>
-        </ui5-option-custom>
-    </ui5-select>
-    Select
-    Changed item    Old     New
-    property        menu    removed
-    The menu property of the ui5-select is removed.
-    
-    Related to #8461, #7887
+    Related to: #8461
+    Related to: #7391
